@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Capstone</string>
+    <string name="calorie">2126</string>
+    <string name="calorie_caption">Your Calorie Needs</string>
+    <string name="search_hint">Search Your Activity Here</string>
+    <string name="activity_name">Activity Name</string>
+    <string name="duration">DURATION : </string>
+    <string name="hours">HOURS</string>
+    <string name="minutes">MINUTES</string>
+    <string name="caption_button_check">CHECK YOUR FOOD RECOMMENDATION</string>
 </resources>

@@ -1,18 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/calorie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circle"
+            android:fontFamily="@font/rambla"
+            android:gravity="center"
+            android:text="@string/calorie"
+            android:textSize="48sp"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.49"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:layout_constraintVertical_bias="0.086"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/calorie_caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/rambla"
+            android:text="@string/calorie_caption"
+            android:textSize="20sp"
+            card_view:layout_constraintTop_toBottomOf="@+id/calorie"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="128dp" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="?attr/colorPrimary"
+            app:tabTextColor="@android:color/white"
+            card_view:layout_constraintTop_toBottomOf="@+id/calorie_caption"
+            tools:ignore="MissingConstraints" />
+
+        <FrameLayout
+            android:id="@+id/frame_layout"
+            android:layout_width="409dp"
+            android:layout_height="429dp"
+            card_view:layout_constraintTop_toBottomOf="@+id/tabs"
+            tools:ignore="MissingConstraints">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="440dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="1dp"
+                tools:layout_editor_absoluteY="332dp">
+
+            </androidx.viewpager2.widget.ViewPager2>
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
