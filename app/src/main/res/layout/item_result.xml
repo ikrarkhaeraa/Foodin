@@ -6,7 +6,6 @@
     android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="center"
     android:layout_marginLeft="8dp"
     android:layout_marginTop="4dp"
     android:layout_marginRight="8dp"
@@ -15,35 +14,32 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="187dp"
-        android:background="#2591D0"
-        android:padding="8dp">
+        android:background="#2591D0">
 
         <TextView
             android:id="@+id/result_number"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
             android:fontFamily="@font/rambla"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="50sp"
             card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toEndOf="@+id/photo_result"
             card_view:layout_constraintTop_toTopOf="parent"
-            card_view:layout_constraintVertical_bias="0.496"
             tools:ignore="MissingConstraints"
-            tools:text="@string/activity_name" />
+            tools:text="@string/set_result" />
 
         <ImageView
             android:id="@+id/photo_result"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.065"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toTopOf="parent"
-            card_view:layout_constraintVertical_bias="0.491"
+            card_view:layout_constraintVertical_bias="0.486"
             tools:srcCompat="@tools:sample/avatars" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

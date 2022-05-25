@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.capstone.R
 import com.example.capstone.dataClass.ListResult
 
+
 class ListResultAdapter (private val listResult: ArrayList<ListResult>) : RecyclerView.Adapter<ListResultAdapter.ListViewHolder>() {
 
     class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

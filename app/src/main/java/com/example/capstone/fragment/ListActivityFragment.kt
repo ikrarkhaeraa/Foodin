@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.capstone.adapter.ActivityListAdapter
@@ -50,7 +51,7 @@ class ListActivityFragment : Fragment() {
         }
 
     private fun showRecyclerList() {
-        adapter.layoutManager = LinearLayoutManager(context)
+        adapter.layoutManager = LinearLayoutManager(this.context)
         val listActivityAdapter = ActivityListAdapter(listActivity)
         adapter.adapter = listActivityAdapter
     }

@@ -13,21 +13,20 @@ import com.example.capstone.databinding.ActivityResultBinding
 
 class ResultActivity : AppCompatActivity() {
 
-    private lateinit var rvResult: RecyclerView
+    private lateinit var adapter: RecyclerView
     private lateinit var binding: ActivityResultBinding
     private val list = ArrayList<ListResult>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_result)
         binding = ActivityResultBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        rvResult = binding.rvResult
-        rvResult.setHasFixedSize(true)
+        adapter = binding.rvResult
+        adapter.setHasFixedSize(true)
 
         list.addAll(listResults)
         showRecyclerList()
-        Log.d("list", "$list")
     }
 
     private val listResults: ArrayList<ListResult>
@@ -42,9 +41,9 @@ class ResultActivity : AppCompatActivity() {
             return listRes
         }
     private fun showRecyclerList() {
-        rvResult.layoutManager = LinearLayoutManager(this)
-        val adapter = ListResultAdapter(list)
-        rvResult.adapter = adapter
+        adapter.layoutManager = LinearLayoutManager(this)
+        val listResultAdapter = ListResultAdapter(list)
+        adapter.adapter = listResultAdapter
     }
 
 }

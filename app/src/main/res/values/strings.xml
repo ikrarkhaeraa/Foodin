@@ -13,7 +13,8 @@
     <string name="tab_added_activity">Activity Added</string>
     <string name="foodin">FOODIN</string>
     <string name="setting">Setting</string>
-    <string name="here_result" tools:ignore="StringEscaping">HERE IS THE RESULT</string>
+    <string name="here_result">HERE IS THE RESULT</string>
+    <string name="set_result">SET 1</string>
 
     <string-array name="activity_name_list">
         <item>SCHOOL</item>

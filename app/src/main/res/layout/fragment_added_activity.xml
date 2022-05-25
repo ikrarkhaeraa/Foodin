@@ -30,7 +30,7 @@
         android:id="@+id/rv_activity_added"
         android:layout_width="match_parent"
         android:layout_height="280dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/button_added"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
