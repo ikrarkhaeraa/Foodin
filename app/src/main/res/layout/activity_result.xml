@@ -4,32 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.ListActivityFragment">
+    tools:context=".activity.ResultActivity">
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/search_bar"
+    <TextView
+        android:id="@+id/result_caption"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/search_bar"
+        android:fontFamily="@font/rambla"
+        android:gravity="center"
+        android:text="@string/here_result"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:queryHint="@string/search_hint"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.039" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_activity_list"
+        android:id="@+id/rv_result"
         android:layout_width="match_parent"
-        android:layout_height="290dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintTop_toBottomOf="@+id/search_bar"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp" />
-
+        android:layout_height="600dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.572"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

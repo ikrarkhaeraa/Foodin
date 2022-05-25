@@ -1,9 +1,10 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Capstone</string>
     <string name="calorie">2126</string>
     <string name="calorie_caption">Your Calorie Needs</string>
     <string name="search_hint">Search Your Activity Here</string>
     <string name="activity_name">Activity Name</string>
+    <string name="activity_added">Activity Name</string>
     <string name="duration">DURATION : </string>
     <string name="hours">HOURS</string>
     <string name="minutes">MINUTES</string>
@@ -12,8 +13,9 @@
     <string name="tab_added_activity">Activity Added</string>
     <string name="foodin">FOODIN</string>
     <string name="setting">Setting</string>
+    <string name="here_result" tools:ignore="StringEscaping">HERE IS THE RESULT</string>
 
-    <string-array name="activity_name">
+    <string-array name="activity_name_list">
         <item>SCHOOL</item>
         <item>GYM</item>
         <item>WORK</item>
@@ -26,12 +28,28 @@
         <item>VOLLEY</item>
     </string-array>
 
-    <string-array name="activity_added">
+    <string-array name="activity_added_list">
         <item>RIDING</item>
         <item>GAMING</item>
         <item>STROLLING AROUND</item>
         <item>COLLAGE</item>
         <item>VOLLEY</item>
     </string-array>
+
+    <string-array name="result_list">
+        <item>SET 1</item>
+        <item>SET 2</item>
+        <item>SET 3</item>
+        <item>SET 4</item>
+        <item>SET 5</item>
+    </string-array>
+
+    <integer-array name="result_photo_list">
+        <item>@drawable/logo</item>
+        <item>@drawable/logo</item>
+        <item>@drawable/logo</item>
+        <item>@drawable/logo</item>
+        <item>@drawable/logo</item>
+    </integer-array>
 
 </resources>

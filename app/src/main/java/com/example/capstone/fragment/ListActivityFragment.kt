@@ -1,4 +1,4 @@
-package com.example.capstone
+package com.example.capstone.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.capstone.adapter.ActivityListAdapter
+import com.example.capstone.dataClass.ActivityName
+import com.example.capstone.R
 import com.example.capstone.databinding.FragmentListActivityBinding
 
 class ListActivityFragment : Fragment() {
@@ -37,7 +40,7 @@ class ListActivityFragment : Fragment() {
 
     private val listActivities: ArrayList<ActivityName>
         get() {
-            val dataName = resources.getStringArray(R.array.activity_name)
+            val dataName = resources.getStringArray(R.array.activity_name_list)
             val activity = ArrayList<ActivityName>()
             for (i in dataName.indices) {
                 val list = ActivityName(dataName[i])

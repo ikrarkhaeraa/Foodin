@@ -1,4 +1,4 @@
-package com.example.capstone
+package com.example.capstone.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,12 +6,12 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.annotation.StringRes
-import androidx.appcompat.app.ActionBar
 import androidx.viewpager2.widget.ViewPager2
+import com.example.capstone.R
+import com.example.capstone.adapter.SectionsPagerAdapter
 import com.example.capstone.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import java.util.Objects
 
 class MainActivity : AppCompatActivity() {
 

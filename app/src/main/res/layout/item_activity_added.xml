@@ -30,7 +30,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.134"
             tools:ignore="MissingConstraints"
-            tools:text="@string/activity_name" />
+            tools:text="@string/activity_added" />
 
         <TextView
             android:id="@+id/duration"

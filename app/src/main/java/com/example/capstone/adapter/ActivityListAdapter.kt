@@ -1,10 +1,12 @@
-package com.example.capstone
+package com.example.capstone.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.capstone.dataClass.ActivityName
+import com.example.capstone.R
 
 class ActivityListAdapter (private val activityList: ArrayList<ActivityName>) : RecyclerView.Adapter<ActivityListAdapter.ListViewHolder>() {
 

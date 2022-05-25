@@ -5,11 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddedActivityFragment">
+    tools:context=".fragment.AddedActivityFragment">
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_added"
         android:layout_width="252dp"
         android:layout_height="54dp"
         android:layout_marginBottom="16dp"
@@ -23,13 +23,13 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@id/rv_activity_added"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.939"
+        app:layout_constraintVertical_bias="0.797"
         tools:ignore="MissingConstraints" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_activity_added"
         android:layout_width="match_parent"
-        android:layout_height="343dp"
+        android:layout_height="280dp"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

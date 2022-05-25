@@ -1,5 +1,6 @@
-package com.example.capstone
+package com.example.capstone.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.capstone.dataClass.ActivityNameAdded
+import com.example.capstone.R
+import com.example.capstone.activity.ResultActivity
+import com.example.capstone.adapter.ActivityAddedAdapter
 import com.example.capstone.databinding.FragmentAddedActivityBinding
 
 class AddedActivityFragment : Fragment() {
@@ -33,11 +38,12 @@ class AddedActivityFragment : Fragment() {
         adapter.setHasFixedSize(true)
         addedActivity.addAll(listActivities)
         showRecyclerList()
+        toResult()
     }
 
     private val listActivities: ArrayList<ActivityNameAdded>
         get() {
-            val dataName = resources.getStringArray(R.array.activity_name)
+            val dataName = resources.getStringArray(R.array.activity_added_list)
             val activity = ArrayList<ActivityNameAdded>()
             for (i in dataName.indices) {
                 val list = ActivityNameAdded(dataName[i])
@@ -50,5 +56,12 @@ class AddedActivityFragment : Fragment() {
         adapter.layoutManager = LinearLayoutManager(context)
         val addedActivityAdapter = ActivityAddedAdapter(addedActivity)
         adapter.adapter = addedActivityAdapter
+    }
+
+    private fun toResult() {
+        binding.buttonAdded.setOnClickListener {
+            val intentToResult = Intent(this.context, ResultActivity::class.java)
+            startActivity(intentToResult)
+        }
     }
 }
