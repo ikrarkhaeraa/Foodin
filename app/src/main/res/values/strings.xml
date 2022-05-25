@@ -15,6 +15,20 @@
     <string name="setting">Setting</string>
     <string name="here_result">HERE IS THE RESULT</string>
     <string name="set_result">SET 1</string>
+    <string name="set_detail">SET 1</string>
+    <string name="breakfast">BREAKFAST</string>
+    <string name="food_breakfast">Food : Fried Rice, Egg</string>
+    <string name="drink_breakfast">Drink: Milk</string>
+    <string name="fruit_breakfast">Fruit: Mango</string>
+    <string name="lunch">LUNCH</string>
+    <string name="food_lunch">Food : Rice, Tofu</string>
+    <string name="drink_lunch">Drink : Orange Juice</string>
+    <string name="fruit_lunch">Fruit : Avocado</string>
+    <string name="dinner">DINNER</string>
+    <string name="food_dinner">Food : Salad</string>
+    <string name="drink_dinner">Drink : Mineral Water</string>
+    <string name="fruit_dinner">Fruit : Orange</string>
+
 
     <string-array name="activity_name_list">
         <item>SCHOOL</item>

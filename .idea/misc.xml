@@ -8,6 +8,7 @@
         <entry key="..\:/Bangkit/CAPSTONE/MD/app/src/main/res/drawable/add_toggle.xml" value="0.1" />
         <entry key="..\:/Bangkit/CAPSTONE/MD/app/src/main/res/drawable/button.xml" value="0.1" />
         <entry key="..\:/Bangkit/CAPSTONE/MD/app/src/main/res/drawable/circle.xml" value="0.10666666666666667" />
+        <entry key="..\:/Bangkit/CAPSTONE/MD/app/src/main/res/drawable/detail.xml" value="0.1035" />
         <entry key="..\:/Bangkit/CAPSTONE/MD/app/src/main/res/drawable/ic_baseline_add_box_24.xml" value="0.1" />
         <entry key="..\:/Bangkit/CAPSTONE/MD/app/src/main/res/drawable/ic_baseline_indeterminate_check_box_24.xml" value="0.1" />
         <entry key="..\:/Bangkit/CAPSTONE/MD/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.1" />
@@ -15,7 +16,9 @@
         <entry key="..\:/Bangkit/CAPSTONE/MD/app/src/main/res/drawable/ic_outline_add_box_24.xml" value="0.1" />
         <entry key="..\:/Bangkit/CAPSTONE/MD/app/src/main/res/drawable/ic_outline_indeterminate_check_box_24.xml" value="0.1" />
         <entry key="..\:/Bangkit/CAPSTONE/MD/app/src/main/res/drawable/min_toggle.xml" value="0.1" />
+        <entry key="..\:/Bangkit/CAPSTONE/MD/app/src/main/res/drawable/rectangle.xml" value="0.1035" />
         <entry key="..\:/Bangkit/CAPSTONE/MD/app/src/main/res/drawable/search_bar.xml" value="0.1" />
+        <entry key="..\:/Bangkit/CAPSTONE/MD/app/src/main/res/layout/activity_detail.xml" value="0.22" />
         <entry key="..\:/Bangkit/CAPSTONE/MD/app/src/main/res/layout/activity_main.xml" value="0.1638888888888889" />
         <entry key="..\:/Bangkit/CAPSTONE/MD/app/src/main/res/layout/activity_result.xml" value="0.22" />
         <entry key="..\:/Bangkit/CAPSTONE/MD/app/src/main/res/layout/activity_setting.xml" value="0.17552083333333332" />

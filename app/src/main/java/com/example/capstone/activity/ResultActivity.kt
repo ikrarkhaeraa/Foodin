@@ -1,5 +1,6 @@
 package com.example.capstone.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -44,6 +45,15 @@ class ResultActivity : AppCompatActivity() {
         adapter.layoutManager = LinearLayoutManager(this)
         val listResultAdapter = ListResultAdapter(list)
         adapter.adapter = listResultAdapter
+
+        listResultAdapter.setOnItemClickCallback(object : ListResultAdapter.OnItemClickCallback{
+            override fun onItemClicked(result: ListResult) {
+                val intentToDetail = Intent(this@ResultActivity, DetailActivity::class.java)
+                intentToDetail.putExtra("DATA", result)
+                startActivity(intentToDetail)
+            }
+        })
+
     }
 
 }

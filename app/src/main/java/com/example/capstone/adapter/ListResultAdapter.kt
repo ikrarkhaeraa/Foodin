@@ -12,6 +12,16 @@ import com.example.capstone.dataClass.ListResult
 
 class ListResultAdapter (private val listResult: ArrayList<ListResult>) : RecyclerView.Adapter<ListResultAdapter.ListViewHolder>() {
 
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
+    interface OnItemClickCallback {
+        fun onItemClicked(result: ListResult)
+    }
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback){
+        this.onItemClickCallback = onItemClickCallback
+    }
+
     class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvName: TextView = itemView.findViewById(R.id.result_number)
         var imgPhoto: ImageView = itemView.findViewById(R.id.photo_result)
@@ -26,6 +36,9 @@ class ListResultAdapter (private val listResult: ArrayList<ListResult>) : Recycl
         val (name, photo) = listResult[position]
         holder.tvName.text = name
         holder.imgPhoto.setImageResource(photo)
+        holder.itemView.setOnClickListener {
+            onItemClickCallback.onItemClicked(listResult[holder.adapterPosition])
+        }
     }
 
     override fun getItemCount(): Int = listResult.size
