@@ -12,7 +12,7 @@
         android:id="@+id/button"
         android:layout_width="252dp"
         android:layout_height="54dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/button"
         android:shadowRadius="30"
         android:text="@string/caption_button_check"
@@ -20,13 +20,16 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@id/rv_activity_added"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.939"
         tools:ignore="MissingConstraints" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_activity_added"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_height="343dp"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

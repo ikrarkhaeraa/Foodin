@@ -8,4 +8,30 @@
     <string name="hours">HOURS</string>
     <string name="minutes">MINUTES</string>
     <string name="caption_button_check">CHECK YOUR FOOD RECOMMENDATION</string>
+    <string name="tab_list_activity">Activity List</string>
+    <string name="tab_added_activity">Activity Added</string>
+    <string name="foodin">FOODIN</string>
+    <string name="setting">Setting</string>
+
+    <string-array name="activity_name">
+        <item>SCHOOL</item>
+        <item>GYM</item>
+        <item>WORK</item>
+        <item>RIDING</item>
+        <item>GAMING</item>
+        <item>STROLLING AROUND</item>
+        <item>COLLAGE</item>
+        <item>BASKET</item>
+        <item>FOOTBALL</item>
+        <item>VOLLEY</item>
+    </string-array>
+
+    <string-array name="activity_added">
+        <item>RIDING</item>
+        <item>GAMING</item>
+        <item>STROLLING AROUND</item>
+        <item>COLLAGE</item>
+        <item>VOLLEY</item>
+    </string-array>
+
 </resources>

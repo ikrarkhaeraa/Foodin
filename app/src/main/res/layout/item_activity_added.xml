@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
@@ -13,23 +13,22 @@
     android:layout_marginBottom="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="341dp"
+        android:layout_width="match_parent"
         android:layout_height="106dp"
         android:background="#2591D0"
         android:padding="8dp">
 
         <TextView
-            android:id="@+id/activity_name"
+            android:id="@+id/activity_added"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/rambla"
             android:textColor="@color/white"
             android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="0.195"
-            card_view:layout_constraintBottom_toBottomOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent"
-            card_view:layout_constraintVertical_bias="0.134"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.134"
             tools:ignore="MissingConstraints"
             tools:text="@string/activity_name" />
 
@@ -41,37 +40,38 @@
             android:text="@string/duration"
             android:textColor="@color/white"
             android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="0.45"
-            card_view:layout_constraintBottom_toBottomOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/activity_name"
-            card_view:layout_constraintVertical_bias="0.586" />
+            app:layout_constraintTop_toBottomOf="@+id/activity_added"
+            app:layout_constraintVertical_bias="0.586" />
 
         <TextView
             android:id="@+id/hours"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:fontFamily="@font/rambla"
             android:text="@string/hours"
             android:textColor="@color/white"
             android:textSize="13sp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tb_hours"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.722"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="124dp" />
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/minutes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="108dp"
             android:fontFamily="@font/rambla"
             android:text="@string/minutes"
             android:textColor="@color/white"
             android:textSize="13sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tb_hours"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.06"
+            app:layout_constraintStart_toEndOf="@+id/tb_minutes"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.722"
             tools:ignore="MissingConstraints" />
@@ -85,41 +85,47 @@
             android:ems="10"
             android:inputType="number"
             android:text=""
-            android:textSize="24dp"
+            android:textSize="24sp"
             android:visibility="visible"
-            app:layout_constraintEnd_toStartOf="@+id/hours"
-            app:layout_constraintHorizontal_bias="0.111"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/duration"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="46dp" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.915"
+            tools:ignore="MissingConstraints" />
 
         <EditText
             android:id="@+id/tb_minutes"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="12dp"
             android:background="@color/white"
             android:ems="10"
             android:inputType="number"
             android:text=""
-            android:textSize="24dp"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/hours"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="46dp" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.915"
+            tools:ignore="MissingConstraints" />
 
         <ToggleButton
             android:id="@+id/add_toggle"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginStart="180dp"
+            android:layout_marginStart="224dp"
             android:background="@drawable/min_toggle"
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:textOff=""
             android:textOn=""
-            app:layout_constraintStart_toEndOf="@+id/activity_name"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="4dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/activity_added"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
