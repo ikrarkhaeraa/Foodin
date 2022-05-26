@@ -28,6 +28,8 @@
     <string name="food_dinner">Food : Salad</string>
     <string name="drink_dinner">Drink : Mineral Water</string>
     <string name="fruit_dinner">Fruit : Orange</string>
+    <string name="weight_target">YOUR WEIGHT TARGET IS: </string>
+    <string name="next_button">Next </string>
 
 
     <string-array name="activity_name_list">
