@@ -54,6 +54,11 @@ class MainActivity : AppCompatActivity() {
                 startActivity(i)
                 true
             }
+            R.id.logout -> {
+                val i = Intent(this, WelcomeActivity::class.java)
+                startActivity(i)
+                true
+            }
             else -> true
         }
     }

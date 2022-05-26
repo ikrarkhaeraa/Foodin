@@ -35,11 +35,11 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/bg_blue"
+        android:id="@+id/bg_blue_detail"
         android:layout_width="match_parent"
         android:layout_height="550dp"
         android:layout_marginTop="12dp"
-        android:background="@drawable/detail"
+        android:background="@drawable/bgblue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -60,7 +60,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bg_blue"
+        app:layout_constraintTop_toTopOf="@+id/bg_blue_detail"
         app:layout_constraintVertical_bias="0.021" />
 
     <TextView
@@ -86,7 +86,7 @@
         android:text="@string/food_breakfast"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/bg_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
@@ -140,7 +140,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.036"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bg_blue"
+        app:layout_constraintTop_toTopOf="@+id/bg_blue_detail"
         app:layout_constraintVertical_bias="0.365" />
 
     <TextView
@@ -196,7 +196,7 @@
         android:text="@string/fruit_lunch"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/bg_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="parent"
@@ -216,7 +216,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.038"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bg_blue"
+        app:layout_constraintTop_toTopOf="@+id/bg_blue_detail"
         app:layout_constraintVertical_bias="0.729" />
 
     <TextView
@@ -241,7 +241,7 @@
         android:text="@string/food_dinner"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/bg_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.038"
         app:layout_constraintStart_toStartOf="parent"
@@ -257,7 +257,7 @@
         android:text="@string/drink_dinner"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/bg_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"

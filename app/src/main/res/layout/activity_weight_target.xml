@@ -36,7 +36,6 @@
         android:layout_width="252dp"
         android:layout_height="54dp"
         android:background="@drawable/button"
-        android:shadowRadius="30"
         android:text="@string/next_button"
         android:textColor="@color/white"
         android:textSize="12sp"

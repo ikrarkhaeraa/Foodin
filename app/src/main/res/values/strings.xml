@@ -29,8 +29,18 @@
     <string name="drink_dinner">Drink : Mineral Water</string>
     <string name="fruit_dinner">Fruit : Orange</string>
     <string name="weight_target">YOUR WEIGHT TARGET IS: </string>
-    <string name="next_button">Next </string>
-
+    <string name="next_button">NEXT</string>
+    <string name="logout">Logout</string>
+    <string name="foodin_welcome">FOODIN</string>
+    <string name="food_recommendation_welcome">FOOD RECOMMENDATION APP</string>
+    <string name="welcome">WELCOME</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="caption_welcome">The application is designed to make it easier for people to maintain
+healthy food consumption and recommendations that can lead to
+“4 sehat 5 sempurna” . We want to help  Indonesians to be healthy
+citizens in controlling their food consumption by giving food
+recommendations based on their activity and calorie requirement.</string>
 
     <string-array name="activity_name_list">
         <item>SCHOOL</item>
