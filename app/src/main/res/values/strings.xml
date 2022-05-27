@@ -41,6 +41,9 @@ healthy food consumption and recommendations that can lead to
 “4 sehat 5 sempurna” . We want to help  Indonesians to be healthy
 citizens in controlling their food consumption by giving food
 recommendations based on their activity and calorie requirement.</string>
+    <string name="invalid_password">Password should have at least 6 characters</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
 
     <string-array name="activity_name_list">
         <item>SCHOOL</item>
