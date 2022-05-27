@@ -1,5 +1,6 @@
 package com.example.capstone.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.capstone.R
@@ -13,5 +14,24 @@ class GoalsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityGoalsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        chooseButton()
     }
+
+    private fun chooseButton() {
+        binding.apply {
+            blueRectangle.setOnClickListener {
+                val intentToNextPage = Intent(this@GoalsActivity, WeightTargetActivity::class.java)
+                startActivity(intentToNextPage)
+            }
+            blueRectangle2.setOnClickListener {
+                val intentToNextPage = Intent(this@GoalsActivity, CurrentWeightActivity::class.java)
+                startActivity(intentToNextPage)
+            }
+            blueRectangle3.setOnClickListener {
+                val intentToNextPage = Intent(this@GoalsActivity, WeightTargetActivity::class.java)
+                startActivity(intentToNextPage)
+            }
+        }
+    }
+
 }

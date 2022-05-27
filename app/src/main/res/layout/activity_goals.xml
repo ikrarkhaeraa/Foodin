@@ -6,4 +6,127 @@
     android:layout_height="match_parent"
     tools:context=".activity.GoalsActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rambla"
+        android:text="@string/choose_goals"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.554"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.119" />
+
+    <TextView
+        android:id="@+id/blue_rectangle"
+        android:layout_width="314dp"
+        android:layout_height="70dp"
+        android:background="@drawable/bluerectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.18" />
+
+    <ImageView
+        android:id="@+id/up_arrow"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/blue_rectangle"
+        app:layout_constraintEnd_toStartOf="@+id/gain_weight"
+        app:layout_constraintHorizontal_bias="0.408"
+        app:layout_constraintStart_toStartOf="@+id/blue_rectangle"
+        app:layout_constraintTop_toTopOf="@+id/blue_rectangle"
+        app:srcCompat="@drawable/ic_baseline_arrow_upward_24" />
+
+    <TextView
+        android:id="@+id/gain_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rambla"
+        android:text="@string/gain_weight"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="@+id/blue_rectangle"
+        app:layout_constraintEnd_toEndOf="@+id/blue_rectangle"
+        app:layout_constraintStart_toStartOf="@+id/blue_rectangle"
+        app:layout_constraintTop_toTopOf="@+id/blue_rectangle" />
+
+    <TextView
+        android:id="@+id/blue_rectangle_2"
+        android:layout_width="314dp"
+        android:layout_height="70dp"
+        android:background="@drawable/bluerectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blue_rectangle"
+        app:layout_constraintVertical_bias="0.174" />
+
+
+    <ImageView
+        android:id="@+id/horizontal_rule"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/blue_rectangle_2"
+        app:layout_constraintEnd_toStartOf="@+id/maintain_weight"
+        app:layout_constraintStart_toStartOf="@+id/blue_rectangle_2"
+        app:layout_constraintTop_toTopOf="@+id/blue_rectangle_2"
+        app:srcCompat="@drawable/ic_baseline_horizontal_rule_24" />
+
+    <TextView
+        android:id="@+id/maintain_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rambla"
+        android:text="@string/maintain_weight"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="@+id/blue_rectangle_2"
+        app:layout_constraintEnd_toEndOf="@+id/blue_rectangle_2"
+        app:layout_constraintHorizontal_bias="0.797"
+        app:layout_constraintStart_toStartOf="@+id/blue_rectangle_2"
+        app:layout_constraintTop_toTopOf="@+id/blue_rectangle_2" />
+
+    <TextView
+        android:id="@+id/blue_rectangle_3"
+        android:layout_width="314dp"
+        android:layout_height="70dp"
+        android:background="@drawable/bluerectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blue_rectangle_2"
+        app:layout_constraintVertical_bias="0.258" />
+
+    <ImageView
+        android:id="@+id/down_arrow"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/blue_rectangle_3"
+        app:layout_constraintEnd_toStartOf="@+id/loss_weight"
+        app:layout_constraintStart_toStartOf="@+id/blue_rectangle_3"
+        app:layout_constraintTop_toTopOf="@+id/blue_rectangle_3"
+        app:srcCompat="@drawable/ic_baseline_arrow_downward_24" />
+
+    <TextView
+        android:id="@+id/loss_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rambla"
+        android:text="@string/loss_weight"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="@+id/blue_rectangle_3"
+        app:layout_constraintEnd_toEndOf="@+id/blue_rectangle_3"
+        app:layout_constraintStart_toStartOf="@+id/blue_rectangle_3"
+        app:layout_constraintTop_toTopOf="@+id/blue_rectangle_3" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

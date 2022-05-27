@@ -8,11 +8,11 @@
 
 
     <TextView
-        android:id="@+id/weight_target"
+        android:id="@+id/current_age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/rambla"
-        android:text="@string/weight_target"
+        android:text="@string/current_age"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -29,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/weight_target" />
+        app:layout_constraintTop_toBottomOf="@+id/current_age" />
 
     <Button
         android:id="@+id/button_next"

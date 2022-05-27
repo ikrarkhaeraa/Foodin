@@ -13,6 +13,18 @@
         android:theme="@style/Theme.Capstone"
         tools:targetApi="31" >
         <activity
+            android:name=".activity.GenderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.CurrentAgeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.CurrentHeightActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.CurrentWeightActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.GoalsActivity"
             android:exported="false" />
         <activity

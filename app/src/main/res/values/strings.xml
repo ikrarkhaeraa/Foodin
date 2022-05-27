@@ -44,6 +44,15 @@ recommendations based on their activity and calorie requirement.</string>
     <string name="invalid_password">Password should have at least 6 characters</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
+    <string name="choose_goals">CHOOSE  YOUR
+        GOALS</string>
+    <string name="gain_weight">Gain Weight</string>
+    <string name="maintain_weight">Maintain Weight</string>
+    <string name="loss_weight">Loss Weight</string>
+    <string name="current_weight">YOUR CURRENT WEIGHT IS: </string>
+    <string name="current_height">YOUR CURRENT HEIGHT IS: </string>
+    <string name="current_age">YOUR CURRENT AGE IS: </string>
+    <string name="gender">YOUR GENDER IS: </string>
 
     <string-array name="activity_name_list">
         <item>SCHOOL</item>
@@ -81,5 +90,10 @@ recommendations based on their activity and calorie requirement.</string>
         <item>@drawable/logo</item>
         <item>@drawable/logo</item>
     </integer-array>
+
+    <string-array name="gender">
+        <item>MALE</item>
+        <item>FEMALE</item>
+    </string-array>
 
 </resources>
