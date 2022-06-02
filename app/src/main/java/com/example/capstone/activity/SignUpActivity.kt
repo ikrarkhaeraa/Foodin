@@ -3,6 +3,7 @@ package com.example.capstone.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.example.capstone.databinding.ActivitySignUpBinding
 
 class SignUpActivity : AppCompatActivity() {
@@ -31,6 +32,7 @@ class SignUpActivity : AppCompatActivity() {
                     edtEmail.error = FIELD_IS_NOT_VALID
                     edtPassword.error = FIELD_REQUIRED
                 } else {
+                    showLoading(true)
                     moveToNextPage()
                 }
             }
@@ -43,10 +45,24 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun moveToNextPage () {
         binding.apply {
+            val email = binding.edtEmail.text.toString().trim()
+            val password = binding.edtPassword.text.toString().trim()
             signUp.setOnClickListener {
-                val intentToSignUp = Intent(this@SignUpActivity, GoalsActivity::class.java)
-                startActivity(intentToSignUp)
+                if (email.isNotEmpty() && isValidEmail(email) && password.isEmpty()) {
+                    val intentToSignUp = Intent(this@SignUpActivity, GoalsActivity::class.java)
+                    intentToSignUp.putExtra("DATA", email + password)
+                    startActivity(intentToSignUp)
+                }
             }
         }
     }
+
+    private fun showLoading(isLoading: Boolean) {
+        if (isLoading) {
+            binding?.progressBar?.visibility = View.VISIBLE
+        } else {
+            binding?.progressBar?.visibility = View.GONE
+        }
+    }
+
 }

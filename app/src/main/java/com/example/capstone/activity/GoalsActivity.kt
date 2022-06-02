@@ -20,15 +20,18 @@ class GoalsActivity : AppCompatActivity() {
     private fun chooseButton() {
         binding.apply {
             blueRectangle.setOnClickListener {
-                val intentToNextPage = Intent(this@GoalsActivity, WeightTargetActivity::class.java)
+                val intentToNextPage = Intent(this@GoalsActivity, CurrentWeightActivity::class.java)
+                intentToNextPage.putExtra("DATA", "Gain Weight")
                 startActivity(intentToNextPage)
             }
             blueRectangle2.setOnClickListener {
                 val intentToNextPage = Intent(this@GoalsActivity, CurrentWeightActivity::class.java)
+                intentToNextPage.putExtra("DATA", "Maintain Weight")
                 startActivity(intentToNextPage)
             }
             blueRectangle3.setOnClickListener {
-                val intentToNextPage = Intent(this@GoalsActivity, WeightTargetActivity::class.java)
+                val intentToNextPage = Intent(this@GoalsActivity, CurrentWeightActivity::class.java)
+                intentToNextPage.putExtra("DATA", "Loss Weight")
                 startActivity(intentToNextPage)
             }
         }

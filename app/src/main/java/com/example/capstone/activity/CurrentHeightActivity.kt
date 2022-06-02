@@ -24,12 +24,15 @@ class CurrentHeightActivity : AppCompatActivity() {
 
         numberPicker.setOnValueChangedListener {
                 _, _, newValue -> currentWeight.text = "YOUR CURRENT HEIGHT IS: $newValue"
+
+            binding.buttonNext.setOnClickListener {
+                val intentToNextPage = Intent(this@CurrentHeightActivity, CurrentAgeActivity::class.java)
+                intentToNextPage.putExtra("DATA", newValue)
+                startActivity(intentToNextPage)
+            }
+
         }
 
-        binding.buttonNext.setOnClickListener {
-            val intentToNextPage = Intent(this@CurrentHeightActivity, CurrentAgeActivity::class.java)
-            startActivity(intentToNextPage)
-        }
 
     }
 }

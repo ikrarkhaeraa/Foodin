@@ -23,11 +23,13 @@ class CurrentWeightActivity : AppCompatActivity() {
 
         numberPicker.setOnValueChangedListener {
                 _, _, newValue -> currentWeight.text = "YOUR CURRENT WEIGHT IS: $newValue"
-        }
+            
+            binding.buttonNext.setOnClickListener {
+                val intentToNextPage = Intent(this@CurrentWeightActivity, CurrentHeightActivity::class.java)
+                intentToNextPage.putExtra("DATA", newValue)
+                startActivity(intentToNextPage)
+            }
 
-        binding.buttonNext.setOnClickListener {
-            val intentToNextPage = Intent(this@CurrentWeightActivity, CurrentHeightActivity::class.java)
-            startActivity(intentToNextPage)
         }
 
     }

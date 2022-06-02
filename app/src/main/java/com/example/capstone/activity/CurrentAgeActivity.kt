@@ -23,11 +23,13 @@ class CurrentAgeActivity : AppCompatActivity() {
 
         numberPicker.setOnValueChangedListener {
                 _, _, newValue -> currentWeight.text = "YOUR CURRENT AGE IS: $newValue"
-        }
 
-        binding.buttonNext.setOnClickListener {
-            val intentToNextPage = Intent(this@CurrentAgeActivity, GenderActivity::class.java)
-            startActivity(intentToNextPage)
+            binding.buttonNext.setOnClickListener {
+                val intentToNextPage = Intent(this@CurrentAgeActivity, GenderActivity::class.java)
+                intentToNextPage.putExtra("DATA", newValue)
+                startActivity(intentToNextPage)
+            }
+
         }
 
     }
