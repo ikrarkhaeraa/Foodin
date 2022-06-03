@@ -7,6 +7,12 @@ import com.example.capstone.databinding.ActivityCurrentWeightBinding
 
 class CurrentWeightActivity : AppCompatActivity() {
 
+    companion object {
+        const val PASSWORD = "password"
+        const val EMAIL = "email"
+        const val GOALS = "goals"
+    }
+
     private lateinit var binding: ActivityCurrentWeightBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,8 +31,14 @@ class CurrentWeightActivity : AppCompatActivity() {
                 _, _, newValue -> currentWeight.text = "YOUR CURRENT WEIGHT IS: $newValue"
             
             binding.buttonNext.setOnClickListener {
+                var email = intent.getStringExtra(EMAIL)
+                var password = intent.getStringExtra(PASSWORD)
+                var goals = intent.getStringExtra(GOALS)
                 val intentToNextPage = Intent(this@CurrentWeightActivity, CurrentHeightActivity::class.java)
-                intentToNextPage.putExtra("DATA", newValue)
+                intentToNextPage.putExtra(CurrentHeightActivity.EMAIL, password)
+                intentToNextPage.putExtra(CurrentHeightActivity.PASSWORD, email)
+                intentToNextPage.putExtra(CurrentHeightActivity.GOALS, goals)
+                intentToNextPage.putExtra(CurrentHeightActivity.WEIGHT, newValue)
                 startActivity(intentToNextPage)
             }
 

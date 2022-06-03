@@ -32,7 +32,6 @@ class SignUpActivity : AppCompatActivity() {
                     edtEmail.error = FIELD_IS_NOT_VALID
                     edtPassword.error = FIELD_REQUIRED
                 } else {
-                    showLoading(true)
                     moveToNextPage()
                 }
             }
@@ -50,18 +49,11 @@ class SignUpActivity : AppCompatActivity() {
             signUp.setOnClickListener {
                 if (email.isNotEmpty() && isValidEmail(email) && password.isEmpty()) {
                     val intentToSignUp = Intent(this@SignUpActivity, GoalsActivity::class.java)
-                    intentToSignUp.putExtra("DATA", email + password)
+                    intentToSignUp.putExtra(GoalsActivity.EMAIL, email)
+                    intentToSignUp.putExtra(GoalsActivity.PASSWORD, password)
                     startActivity(intentToSignUp)
                 }
             }
-        }
-    }
-
-    private fun showLoading(isLoading: Boolean) {
-        if (isLoading) {
-            binding?.progressBar?.visibility = View.VISIBLE
-        } else {
-            binding?.progressBar?.visibility = View.GONE
         }
     }
 
