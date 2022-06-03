@@ -36,7 +36,7 @@ class CurrentHeightActivity : AppCompatActivity() {
                 var email = intent.getStringExtra(EMAIL)
                 var password = intent.getStringExtra(PASSWORD)
                 var goals = intent.getStringExtra(GOALS)
-                var weight = intent.getStringExtra(WEIGHT)
+                var weight = intent.getIntExtra(WEIGHT, 0)
                 val intentToNextPage = Intent(this@CurrentHeightActivity, CurrentAgeActivity::class.java)
                 intentToNextPage.putExtra(CurrentAgeActivity.EMAIL, password)
                 intentToNextPage.putExtra(CurrentAgeActivity.PASSWORD, email)

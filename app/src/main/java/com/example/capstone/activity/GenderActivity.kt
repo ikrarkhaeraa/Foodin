@@ -22,13 +22,6 @@ class GenderActivity : AppCompatActivity() {
         const val AGE = "age"
     }
 
-    var email = intent.getStringExtra(EMAIL)
-    var password = intent.getStringExtra(PASSWORD)
-    var goals = intent.getStringExtra(GOALS)
-    var weight = intent.getStringExtra(WEIGHT)
-    var height = intent.getStringExtra(HEIGHT)
-    var age = intent.getStringExtra(AGE)
-
     private lateinit var binding: ActivityGenderBinding
     private lateinit var factory: ModelFactory
     private val model: SignUpModel by viewModels { factory }
@@ -52,32 +45,38 @@ class GenderActivity : AppCompatActivity() {
             var gender = newValue.toString()
 
             binding.buttonNext.setOnClickListener {
+                var email = intent.getStringExtra(EMAIL)
+                var password = intent.getStringExtra(PASSWORD)
+                var goals = intent.getStringExtra(GOALS)
+                var weight = intent.getIntExtra(WEIGHT, 0)
+                var height = intent.getIntExtra(HEIGHT, 0)
+                var age = intent.getIntExtra(AGE, 0)
                 if (email?.isNotEmpty() == true && password?.isNotEmpty() == true && goals?.isNotEmpty() == true &&
-                    weight?.isNotEmpty() == true && height?.isNotEmpty() == true && age?.isNotEmpty() == true && gender.isNotEmpty()
+                    weight?.toString().isNotEmpty() == true && height?.toString().isNotEmpty() == true && age?.toString().isNotEmpty() == true && gender.isNotEmpty()
                 ) {
                     model.postDataSignUp(
                         email.toString(),
                         password.toString(),
-                        height!!.toInt(),
-                        weight!!.toInt(),
+                        height,
+                        weight,
                         gender,
-                        age!!.toInt(),
+                        age,
                         goals.toString()
                     )
-                    //moveToLogin()
+                    moveToLogin()
                 }
             }
         }
     }
 
-//    private fun moveToLogin () {
-//        model.signUp.observe(this@GenderActivity) { response ->
-//            if (response.status) {
-//                val intent = Intent(this@GenderActivity, SignUpActivity::class.java)
-//                startActivity(intent)
-//            }
-//        }
-//    }
+    private fun moveToLogin () {
+        model.signUp.observe(this@GenderActivity) { response ->
+            if (response.status.equals(true)) {
+                val intent = Intent(this@GenderActivity, SignUpActivity::class.java)
+                startActivity(intent)
+            }
+        }
+    }
 
     private fun showLoading(isLoading: Boolean) {
         if (isLoading) {

@@ -32,22 +32,6 @@ class SignUpActivity : AppCompatActivity() {
                     edtEmail.error = FIELD_IS_NOT_VALID
                     edtPassword.error = FIELD_REQUIRED
                 } else {
-                    moveToNextPage()
-                }
-            }
-        }
-    }
-
-    private fun isValidEmail(email: CharSequence): Boolean {
-        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
-    }
-
-    private fun moveToNextPage () {
-        binding.apply {
-            val email = binding.edtEmail.text.toString().trim()
-            val password = binding.edtPassword.text.toString().trim()
-            signUp.setOnClickListener {
-                if (email.isNotEmpty() && isValidEmail(email) && password.isEmpty()) {
                     val intentToSignUp = Intent(this@SignUpActivity, GoalsActivity::class.java)
                     intentToSignUp.putExtra(GoalsActivity.EMAIL, email)
                     intentToSignUp.putExtra(GoalsActivity.PASSWORD, password)
@@ -57,4 +41,7 @@ class SignUpActivity : AppCompatActivity() {
         }
     }
 
+    private fun isValidEmail(email: CharSequence): Boolean {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
 }
