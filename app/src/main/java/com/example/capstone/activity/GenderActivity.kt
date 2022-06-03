@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import com.example.capstone.ModelFactory
@@ -30,30 +31,41 @@ class GenderActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityGenderBinding.inflate(layoutInflater)
+        factory = ModelFactory.getInstance(this)
         setContentView(binding.root)
 
-        var currentWeight = binding.gender
-        var numberPicker = binding.numberPicker
-        var gender = resources.getStringArray(R.array.gender)
-        numberPicker.displayedValues = gender
+        val currentWeight = binding.gender
+        val numberPicker = binding.numberPicker
+        val chooseGender = resources.getStringArray(R.array.gender)
+        numberPicker.displayedValues = chooseGender
         numberPicker.minValue = 0
         numberPicker.maxValue = 1
         numberPicker.wrapSelectorWheel = true
 
         numberPicker.setOnValueChangedListener {
-                _, _, newValue -> currentWeight.text = "YOUR CURRENT AGE IS: " + gender[newValue]
-            var gender = newValue.toString()
+                _, _, newValue -> currentWeight.text = "YOUR GENDER IS: " + chooseGender[newValue]
+            val gender = chooseGender[newValue]
+            val email = intent.getStringExtra(EMAIL)
+            val password = intent.getStringExtra(PASSWORD)
+            val goals = intent.getStringExtra(GOALS)
+            val weight = intent.getIntExtra(WEIGHT, 0)
+            val height = intent.getIntExtra(HEIGHT, 0)
+            val age = intent.getIntExtra(AGE, 0)
+
+            Log.d("cekData", "$email")
+            Log.d("cekData", "$password")
+            Log.d("cekData", "$goals")
+            Log.d("cekData", "$weight")
+            Log.d("cekData", "$height")
+            Log.d("cekData", "$age")
+            Log.d("cekData", gender)
 
             binding.buttonNext.setOnClickListener {
-                var email = intent.getStringExtra(EMAIL)
-                var password = intent.getStringExtra(PASSWORD)
-                var goals = intent.getStringExtra(GOALS)
-                var weight = intent.getIntExtra(WEIGHT, 0)
-                var height = intent.getIntExtra(HEIGHT, 0)
-                var age = intent.getIntExtra(AGE, 0)
-                if (email?.isNotEmpty() == true && password?.isNotEmpty() == true && goals?.isNotEmpty() == true &&
-                    weight?.toString().isNotEmpty() == true && height?.toString().isNotEmpty() == true && age?.toString().isNotEmpty() == true && gender.isNotEmpty()
+                if (EMAIL.isNotEmpty() && PASSWORD.isNotEmpty() && GOALS.isNotEmpty() &&
+                    WEIGHT.isNotEmpty() && HEIGHT.isNotEmpty() &&
+                    AGE.isNotEmpty() && gender.isNotEmpty()
                 ) {
+                    binding.buttonNext.isEnabled
                     model.postDataSignUp(
                         email.toString(),
                         password.toString(),
@@ -64,7 +76,7 @@ class GenderActivity : AppCompatActivity() {
                         goals.toString()
                     )
                     moveToLogin()
-                }
+               }
             }
         }
     }
@@ -72,18 +84,18 @@ class GenderActivity : AppCompatActivity() {
     private fun moveToLogin () {
         model.signUp.observe(this@GenderActivity) { response ->
             if (response.status.equals(true)) {
-                val intent = Intent(this@GenderActivity, SignUpActivity::class.java)
+                val intent = Intent(this@GenderActivity, SignInActivity::class.java)
                 startActivity(intent)
             }
         }
     }
 
-    private fun showLoading(isLoading: Boolean) {
-        if (isLoading) {
-            binding.progressBar.visibility = View.VISIBLE
-        } else {
-            binding.progressBar.visibility = View.GONE
-        }
-    }
+//    private fun showLoading(isLoading: Boolean) {
+//        if (isLoading) {
+//            binding.progressBar.visibility = View.VISIBLE
+//        } else {
+//            binding.progressBar.visibility = View.GONE
+//        }
+//    }
 
 }

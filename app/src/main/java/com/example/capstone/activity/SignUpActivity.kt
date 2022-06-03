@@ -32,10 +32,10 @@ class SignUpActivity : AppCompatActivity() {
                     edtEmail.error = FIELD_IS_NOT_VALID
                     edtPassword.error = FIELD_REQUIRED
                 } else {
-                    val intentToSignUp = Intent(this@SignUpActivity, GoalsActivity::class.java)
-                    intentToSignUp.putExtra(GoalsActivity.EMAIL, email)
-                    intentToSignUp.putExtra(GoalsActivity.PASSWORD, password)
-                    startActivity(intentToSignUp)
+                    val intentToNextPage = Intent(this@SignUpActivity, GoalsActivity::class.java)
+                    intentToNextPage.putExtra(GoalsActivity.EMAIL, edtEmail.text.toString())
+                    intentToNextPage.putExtra(GoalsActivity.PASSWORD, edtPassword.text.toString())
+                    startActivity(intentToNextPage)
                 }
             }
         }
