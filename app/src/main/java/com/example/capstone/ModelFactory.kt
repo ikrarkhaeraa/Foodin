@@ -21,11 +21,11 @@ class ModelFactory(private val dataSource: DataSource) : ViewModelProvider.NewIn
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return when {
-            modelClass.isAssignableFrom(SignInModel::class.java) -> {
-                SignInModel(dataSource) as T
-            }
             modelClass.isAssignableFrom(SignUpModel::class.java) -> {
                 SignUpModel(dataSource) as T
+            }
+            modelClass.isAssignableFrom(SignInModel::class.java) -> {
+                SignInModel(dataSource) as T
             }
             modelClass.isAssignableFrom(CalorieModel::class.java) -> {
                 CalorieModel(dataSource) as T

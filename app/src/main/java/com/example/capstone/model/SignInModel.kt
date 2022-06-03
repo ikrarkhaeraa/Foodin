@@ -3,7 +3,7 @@ package com.example.capstone.model
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.capstone.api.SignInResponse
+import com.example.capstone.response.SignInResponse
 import kotlinx.coroutines.launch
 
 class SignInModel(private val data: DataSource) : ViewModel() {
@@ -14,4 +14,17 @@ class SignInModel(private val data: DataSource) : ViewModel() {
             data.uploadSignInData(email, password)
         }
     }
+
+    fun saveUserSession(session: UserSession) {
+        viewModelScope.launch {
+            data.saveSession(session)
+        }
+    }
+
+    fun userLogin() {
+        viewModelScope.launch {
+            data.userLogin()
+        }
+    }
+
 }

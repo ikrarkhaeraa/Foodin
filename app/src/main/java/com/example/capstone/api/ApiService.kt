@@ -1,8 +1,6 @@
 package com.example.capstone.api
 
 import com.example.capstone.response.*
-import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -20,13 +18,13 @@ interface ApiService {
     ): Call<SignUpResponse>
 
     @FormUrlEncoded
-    @POST("home/{id}")
+    @POST("login")
     fun uploadDataSignIn(
         @Field("email") email: String,
         @Field("password") password: String,
     ): Call<SignInResponse>
 
-    @GET("stories")
+    @GET("home/{id}")
     fun getCalorie(
         @Header("Authorization") token: String,
     ): Call<CalorieResponse>

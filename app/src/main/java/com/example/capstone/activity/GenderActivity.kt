@@ -61,11 +61,10 @@ class GenderActivity : AppCompatActivity() {
             Log.d("cekData", gender)
 
             binding.buttonNext.setOnClickListener {
-                if (EMAIL.isNotEmpty() && PASSWORD.isNotEmpty() && GOALS.isNotEmpty() &&
-                    WEIGHT.isNotEmpty() && HEIGHT.isNotEmpty() &&
-                    AGE.isNotEmpty() && gender.isNotEmpty()
+                if (email?.isNotEmpty() == true && password?.isNotEmpty() == true &&
+                    goals?.isNotEmpty() == true && weight?.toString().isNotEmpty() &&
+                    height?.toString().isNotEmpty() && age?.toString().isNotEmpty() && gender.isNotEmpty()
                 ) {
-                    binding.buttonNext.isEnabled
                     model.postDataSignUp(
                         email.toString(),
                         password.toString(),
@@ -83,10 +82,8 @@ class GenderActivity : AppCompatActivity() {
 
     private fun moveToLogin () {
         model.signUp.observe(this@GenderActivity) { response ->
-            if (response.status.equals(true)) {
                 val intent = Intent(this@GenderActivity, SignInActivity::class.java)
                 startActivity(intent)
-            }
         }
     }
 

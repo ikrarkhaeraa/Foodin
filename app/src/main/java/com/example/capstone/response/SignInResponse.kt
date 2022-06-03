@@ -1,4 +1,4 @@
-package com.example.capstone.api
+package com.example.capstone.response
 
 import com.google.gson.annotations.SerializedName
 

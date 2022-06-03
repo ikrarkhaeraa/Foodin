@@ -5,17 +5,23 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.activity.viewModels
 import androidx.annotation.StringRes
 import androidx.viewpager2.widget.ViewPager2
+import com.example.capstone.ModelFactory
 import com.example.capstone.R
 import com.example.capstone.adapter.SectionsPagerAdapter
 import com.example.capstone.databinding.ActivityMainBinding
+import com.example.capstone.model.CalorieModel
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var factory: ModelFactory
+    private val model: CalorieModel by viewModels { factory }
+    private var token = ""
 
     companion object {
         @StringRes
@@ -30,6 +36,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        factory = ModelFactory.getInstance(this)
+
+        isLogin()
 
         val sectionsPagerAdapter = SectionsPagerAdapter(this)
         val viewPager: ViewPager2 = findViewById(R.id.view_pager)
@@ -55,11 +64,23 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             R.id.logout -> {
-                val i = Intent(this, WelcomeActivity::class.java)
-                startActivity(i)
+                model.userLogout()
+                onDestroy()
                 true
             }
             else -> true
+        }
+    }
+
+    private fun isLogin() {
+        model.getUserSession().observe(this@MainActivity) {
+            token = it.token
+            if (!it.isLogin) {
+                val intent = Intent(this@MainActivity, WelcomeActivity::class.java)
+                startActivity(intent)
+            } else {
+                model.getCalorie(token)
+            }
         }
     }
 

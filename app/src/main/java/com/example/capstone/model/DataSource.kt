@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.asLiveData
 import com.example.capstone.UserPreferences
 import com.example.capstone.api.ApiConfig
-import com.example.capstone.api.SignInResponse
+import com.example.capstone.response.SignInResponse
 import com.example.capstone.response.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -55,7 +55,6 @@ class DataSource private constructor(
                 call: Call<SignUpResponse>,
                 response: Response<SignUpResponse>
             ) {
-                val responseBody = response.body()
                 if (response.isSuccessful) {
                     Log.e("regisResponse", "onResponse: ${response.message()}")
                     _signUp.value = response.body()
@@ -77,7 +76,6 @@ class DataSource private constructor(
                 call: Call<SignInResponse>,
                 response: Response<SignInResponse>
             ) {
-                val responseBody = response.body()
                 if (response.isSuccessful) {
                     Log.e("loginResponse", "onResponse: ${response.message()}")
                     _signIn.value = response.body()

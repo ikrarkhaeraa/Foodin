@@ -3,7 +3,6 @@ package com.example.capstone.model
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.capstone.api.SignInResponse
 import com.example.capstone.response.AddingActivitiesResponse
 import kotlinx.coroutines.launch
 
