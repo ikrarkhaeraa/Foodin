@@ -3,6 +3,7 @@ package com.example.capstone.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.capstone.databinding.ActivityCurrentWeightBinding
 
 class CurrentWeightActivity : AppCompatActivity() {
@@ -34,12 +35,16 @@ class CurrentWeightActivity : AppCompatActivity() {
                 var email = intent.getStringExtra(EMAIL)
                 var password = intent.getStringExtra(PASSWORD)
                 var goals = intent.getStringExtra(GOALS)
-                val intentToNextPage = Intent(this@CurrentWeightActivity, CurrentHeightActivity::class.java)
-                intentToNextPage.putExtra(CurrentHeightActivity.EMAIL, password)
-                intentToNextPage.putExtra(CurrentHeightActivity.PASSWORD, email)
-                intentToNextPage.putExtra(CurrentHeightActivity.GOALS, goals)
-                intentToNextPage.putExtra(CurrentHeightActivity.WEIGHT, newValue)
-                startActivity(intentToNextPage)
+                if (newValue.toString().isEmpty()) {
+                    Toast.makeText(applicationContext,"please input your weight",Toast.LENGTH_SHORT).show()
+                } else {
+                    val intentToNextPage = Intent(this@CurrentWeightActivity, CurrentHeightActivity::class.java)
+                    intentToNextPage.putExtra(CurrentHeightActivity.EMAIL, password)
+                    intentToNextPage.putExtra(CurrentHeightActivity.PASSWORD, email)
+                    intentToNextPage.putExtra(CurrentHeightActivity.GOALS, goals)
+                    intentToNextPage.putExtra(CurrentHeightActivity.WEIGHT, newValue)
+                    startActivity(intentToNextPage)
+                }
             }
 
         }

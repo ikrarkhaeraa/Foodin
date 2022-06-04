@@ -3,6 +3,7 @@ package com.example.capstone.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.capstone.databinding.ActivityCurrentAgeBinding
 
 class CurrentAgeActivity : AppCompatActivity() {
@@ -38,14 +39,18 @@ class CurrentAgeActivity : AppCompatActivity() {
                 var goals = intent.getStringExtra(GOALS)
                 var weight = intent.getIntExtra(WEIGHT, 0)
                 var height = intent.getIntExtra(HEIGHT, 0)
-                val intentToNextPage = Intent(this@CurrentAgeActivity, GenderActivity::class.java)
-                intentToNextPage.putExtra(GenderActivity.EMAIL, password)
-                intentToNextPage.putExtra(GenderActivity.PASSWORD, email)
-                intentToNextPage.putExtra(GenderActivity.GOALS, goals)
-                intentToNextPage.putExtra(GenderActivity.WEIGHT, weight)
-                intentToNextPage.putExtra(GenderActivity.HEIGHT, height)
-                intentToNextPage.putExtra(GenderActivity.AGE, newValue)
-                startActivity(intentToNextPage)
+                if (newValue.toString().isEmpty()) {
+                    Toast.makeText(applicationContext,"please input your age", Toast.LENGTH_SHORT).show()
+                } else {
+                    val intentToNextPage = Intent(this@CurrentAgeActivity, GenderActivity::class.java)
+                    intentToNextPage.putExtra(GenderActivity.EMAIL, password)
+                    intentToNextPage.putExtra(GenderActivity.PASSWORD, email)
+                    intentToNextPage.putExtra(GenderActivity.GOALS, goals)
+                    intentToNextPage.putExtra(GenderActivity.WEIGHT, weight)
+                    intentToNextPage.putExtra(GenderActivity.HEIGHT, height)
+                    intentToNextPage.putExtra(GenderActivity.AGE, newValue)
+                    startActivity(intentToNextPage)
+                }
             }
 
         }

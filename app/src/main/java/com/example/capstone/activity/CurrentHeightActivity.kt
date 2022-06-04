@@ -3,6 +3,7 @@ package com.example.capstone.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.capstone.databinding.ActivityCurrentHeightBinding
 import com.example.capstone.databinding.ActivityCurrentWeightBinding
 
@@ -37,13 +38,17 @@ class CurrentHeightActivity : AppCompatActivity() {
                 var password = intent.getStringExtra(PASSWORD)
                 var goals = intent.getStringExtra(GOALS)
                 var weight = intent.getIntExtra(WEIGHT, 0)
-                val intentToNextPage = Intent(this@CurrentHeightActivity, CurrentAgeActivity::class.java)
-                intentToNextPage.putExtra(CurrentAgeActivity.EMAIL, password)
-                intentToNextPage.putExtra(CurrentAgeActivity.PASSWORD, email)
-                intentToNextPage.putExtra(CurrentAgeActivity.GOALS, goals)
-                intentToNextPage.putExtra(CurrentAgeActivity.WEIGHT, weight)
-                intentToNextPage.putExtra(CurrentAgeActivity.HEIGHT, newValue)
-                startActivity(intentToNextPage)
+                if (newValue.toString().isEmpty()) {
+                    Toast.makeText(applicationContext,"please input your height", Toast.LENGTH_SHORT).show()
+                } else {
+                    val intentToNextPage = Intent(this@CurrentHeightActivity, CurrentAgeActivity::class.java)
+                    intentToNextPage.putExtra(CurrentAgeActivity.EMAIL, password)
+                    intentToNextPage.putExtra(CurrentAgeActivity.PASSWORD, email)
+                    intentToNextPage.putExtra(CurrentAgeActivity.GOALS, goals)
+                    intentToNextPage.putExtra(CurrentAgeActivity.WEIGHT, weight)
+                    intentToNextPage.putExtra(CurrentAgeActivity.HEIGHT, newValue)
+                    startActivity(intentToNextPage)
+                }
             }
 
         }

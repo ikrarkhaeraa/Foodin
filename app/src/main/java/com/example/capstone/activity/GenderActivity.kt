@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import com.example.capstone.ModelFactory
 import com.example.capstone.R
@@ -75,7 +76,9 @@ class GenderActivity : AppCompatActivity() {
                         goals.toString()
                     )
                     moveToLogin()
-               }
+               } else {
+                    Toast.makeText(applicationContext,"please input your gender", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
