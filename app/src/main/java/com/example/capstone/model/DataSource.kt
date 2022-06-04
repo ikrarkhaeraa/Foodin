@@ -56,15 +56,15 @@ class DataSource private constructor(
                 response: Response<SignUpResponse>
             ) {
                 if (response.isSuccessful) {
-                    Log.e("regisResponse", "onResponse: ${response.message()}")
+                    Log.e("signUpResponse", "onResponse: ${response.message()}")
                     _signUp.value = response.body()
                 } else {
-                    Log.e("regis", "onResponse: ${response.message()} / akun sudah ada")
+                    Log.e("signUp", "onResponse: ${response.message()} / akun sudah ada")
 
                 }
             }
             override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {
-                Log.e("regisFailure", "onFailure: ${t.message}")
+                Log.e("signUpFailure", "onFailure: ${t.message}")
             }
         })
     }
@@ -77,10 +77,10 @@ class DataSource private constructor(
                 response: Response<SignInResponse>
             ) {
                 if (response.isSuccessful) {
-                    Log.e("loginResponse", "onResponse: ${response.message()}")
+                    Log.e("signInResponse", "onResponse: ${response.message()}")
                     _signIn.value = response.body()
                 } else {
-                    Log.e("login", "onFailure: ${response.message()}")
+                    Log.e("signIn", "onFailure: ${response.message()}")
                 }
             }
             override fun onFailure(call: Call<SignInResponse>, t: Throwable) {
@@ -96,16 +96,15 @@ class DataSource private constructor(
                 call: Call<CalorieResponse>,
                 response: Response<CalorieResponse>
             ) {
-                val responseBody = response.body()
                 if (response.isSuccessful) {
-                    Log.e("storyResponse", "onResponse: ${response.message()}")
+                    Log.e("calorieResponse", "onResponse: ${response.message()}")
                     _getCalorie.value = response.body()
                 } else {
-                    Log.e("story", "onFailure: ${response.message()}")
+                    Log.e("calorie", "onFailure: ${response.message()}")
                 }
             }
             override fun onFailure(call: Call<CalorieResponse>, t: Throwable) {
-                Log.e("storyFailure", "onFailure: ${t.message}")
+                Log.e("calorieFailure", "onFailure: ${t.message}")
             }
         })
     }

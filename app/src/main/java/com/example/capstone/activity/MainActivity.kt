@@ -3,6 +3,7 @@ package com.example.capstone.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
@@ -39,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         factory = ModelFactory.getInstance(this)
 
         isLogin()
+        showCalorie()
 
         val sectionsPagerAdapter = SectionsPagerAdapter(this)
         val viewPager: ViewPager2 = findViewById(R.id.view_pager)
@@ -81,6 +83,13 @@ class MainActivity : AppCompatActivity() {
             } else {
                 model.getCalorie(token)
             }
+        }
+    }
+
+    private fun showCalorie() {
+        binding.apply {
+            calorie.text = model.calorie.toString()
+            Log.d("cekCalorie", "${calorie.text}")
         }
     }
 
