@@ -59,7 +59,7 @@ class DataSource private constructor(
                     Log.e("signUpResponse", "onResponse: ${response.message()}")
                     _signUp.value = response.body()
                 } else {
-                    Log.e("signUp", "onResponse: ${response.message()} / akun sudah ada")
+                    Log.e("signUp", "onResponse: ${response.message()}")
 
                 }
             }
@@ -89,15 +89,15 @@ class DataSource private constructor(
         })
     }
 
-    fun getCalorie(token: String) {
-        val client = ApiConfig.getApiService().getCalorie(token)
+    fun getCalorie(token: String, id: String) {
+        val client = ApiConfig.getApiService().getCalorie(token, id)
         client.enqueue(object : Callback<CalorieResponse> {
             override fun onResponse(
                 call: Call<CalorieResponse>,
                 response: Response<CalorieResponse>
             ) {
                 if (response.isSuccessful) {
-                    Log.e("calorieResponse", "onResponse: ${response.message()}")
+                    Log.e("calorieResponse", "onResponse: ${response.body()}")
                     _getCalorie.value = response.body()
                 } else {
                     Log.e("calorie", "onFailure: ${response.message()}")

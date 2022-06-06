@@ -14,5 +14,5 @@ data class CalorieResponse(
 data class DataCalorie(
 
 	@field:SerializedName("totalCalories")
-	val totalCalories: String
+	val totalCalories: Int
 )

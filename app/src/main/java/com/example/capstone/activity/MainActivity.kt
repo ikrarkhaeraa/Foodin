@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var factory: ModelFactory
     private val model: CalorieModel by viewModels { factory }
     private var token = ""
+    private var idUser = ""
 
     companion object {
         @StringRes
@@ -40,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         factory = ModelFactory.getInstance(this)
 
         isLogin()
-        showCalorie()
+        //showCalorie()
 
         val sectionsPagerAdapter = SectionsPagerAdapter(this)
         val viewPager: ViewPager2 = findViewById(R.id.view_pager)
@@ -67,7 +68,7 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.logout -> {
                 model.userLogout()
-                onDestroy()
+                finish()
                 true
             }
             else -> true
@@ -77,19 +78,15 @@ class MainActivity : AppCompatActivity() {
     private fun isLogin() {
         model.getUserSession().observe(this@MainActivity) {
             token = it.token
+            idUser = it.id
             if (!it.isLogin) {
                 val intent = Intent(this@MainActivity, WelcomeActivity::class.java)
                 startActivity(intent)
             } else {
-                model.getCalorie(token)
+                model.getCalorie(token, idUser)
+                binding.calorie.text = model.calorie.value?.data?.totalCalories.toString()
+                model.checkCalorie()
             }
-        }
-    }
-
-    private fun showCalorie() {
-        binding.apply {
-            calorie.text = model.calorie.toString()
-            Log.d("cekCalorie", "${calorie.text}")
         }
     }
 

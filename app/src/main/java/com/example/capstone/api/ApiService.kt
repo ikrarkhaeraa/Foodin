@@ -27,6 +27,7 @@ interface ApiService {
     @GET("home/{id}")
     fun getCalorie(
         @Header("Authorization") token: String,
+        @Path("id") id: String
     ): Call<CalorieResponse>
 
     @GET("activities")

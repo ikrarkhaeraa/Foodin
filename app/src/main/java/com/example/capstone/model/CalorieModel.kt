@@ -8,12 +8,17 @@ import com.example.capstone.response.CalorieResponse
 import kotlinx.coroutines.launch
 
 class CalorieModel(private val data: DataSource) : ViewModel() {
-    val calorie: LiveData<CalorieResponse> = data.getCalorie
+     val calorie: LiveData<CalorieResponse> = data.getCalorie
 
-    fun getCalorie(token: String) {
+    fun checkCalorie() {
+        Log.e("calorie", "$calorie")
+    }
+
+    fun getCalorie(token: String, id: String) {
         viewModelScope.launch {
-            data.getCalorie(token)
+            data.getCalorie(token, id)
             Log.e("token", "onResponse: $token")
+            Log.e("userId", "onResponse: $id")
         }
     }
 

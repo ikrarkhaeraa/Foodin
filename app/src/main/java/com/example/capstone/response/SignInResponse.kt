@@ -17,5 +17,8 @@ data class SignInResponse(
 data class DataSignIn(
 
 	@field:SerializedName("token")
-	val token: String
+	val token: String,
+
+	@field:SerializedName("id")
+	val id: String
 )

@@ -1,7 +1,7 @@
 package com.example.capstone.model
 
 data class UserSession(
-    //val email: String,
+    val id: String,
     val token: String,
     val isLogin: Boolean
 )

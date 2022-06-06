@@ -7,7 +7,6 @@ import androidx.activity.viewModels
 import com.example.capstone.ModelFactory
 import com.example.capstone.databinding.ActivitySignInBinding
 import com.example.capstone.model.SignInModel
-import com.example.capstone.model.SignUpModel
 import com.example.capstone.model.UserSession
 
 class SignInActivity : AppCompatActivity() {
@@ -15,6 +14,7 @@ class SignInActivity : AppCompatActivity() {
     companion object {
         private const val FIELD_REQUIRED = "Cannot Be Empty"
         private const val FIELD_IS_NOT_VALID = "Invalid Email"
+        const val IDUSER = "idUser"
     }
 
     private lateinit var binding: ActivitySignInBinding
@@ -65,6 +65,7 @@ class SignInActivity : AppCompatActivity() {
         model.signIn.observe(this@SignInActivity) { response ->
             saveUserSession(
                 UserSession(
+                    response.data.id,
                     response.data.token,
                     true
                 )

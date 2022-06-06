@@ -15,7 +15,7 @@ class UserPreferences private constructor (private val database: DataStore<Prefe
     companion object {
         @Volatile
         private var INSTANCE: UserPreferences? = null
-        //private val EMAIL_KEY = stringPreferencesKey("email")
+        private val ID_KEY = stringPreferencesKey("id")
         private val TOKEN_KEY = stringPreferencesKey("token")
         private val STATE_KEY = booleanPreferencesKey("state")
 
@@ -31,7 +31,7 @@ class UserPreferences private constructor (private val database: DataStore<Prefe
     fun getUserSession(): Flow<UserSession> {
         return database.data.map { preferences ->
             UserSession(
-                //preferences[EMAIL_KEY] ?: "",
+                preferences[ID_KEY] ?: "",
                 preferences[TOKEN_KEY] ?: "",
                 preferences[STATE_KEY] ?: false
             )
@@ -40,7 +40,7 @@ class UserPreferences private constructor (private val database: DataStore<Prefe
 
     suspend fun saveUserSession(session: UserSession) {
         database.edit { preferences ->
-            //preferences[EMAIL_KEY] = session.email
+            preferences[ID_KEY] = session.id
             preferences[TOKEN_KEY] = session.token
             preferences[STATE_KEY] = session.isLogin
         }
