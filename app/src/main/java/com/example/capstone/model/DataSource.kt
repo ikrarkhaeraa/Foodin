@@ -118,10 +118,10 @@ class DataSource private constructor(
             ) {
                 val responseBody = response.body()
                 if (response.isSuccessful) {
-                    Log.e("storyResponse", "onResponse: ${response.message()}")
+                    Log.e("listActivityResponse", "onResponse: ${response.message()}")
                     _listActivities.value = response.body()
                 } else {
-                    Log.e("story", "onFailure: ${response.message()}")
+                    Log.e("listActivity", "onFailure: ${response.message()}")
                 }
             }
             override fun onFailure(call: Call<ListActivitiesResponse>, t: Throwable) {

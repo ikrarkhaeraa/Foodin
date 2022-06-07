@@ -1,29 +1,31 @@
 package com.example.capstone.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.capstone.dataClass.ActivityName
-import com.example.capstone.R
+import com.example.capstone.databinding.ItemActivityListBinding
+import com.example.capstone.response.ListActivitiesItem
 
-class ActivityListAdapter (private val activityList: ArrayList<ActivityName>) : RecyclerView.Adapter<ActivityListAdapter.ListViewHolder>() {
+class ActivityListAdapter (private val activityList: List<ListActivitiesItem>) : RecyclerView.Adapter<ActivityListAdapter.ListViewHolder>() {
 
-    class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var tvName: TextView = itemView.findViewById(R.id.activity_name)
+    inner class ListViewHolder(var binding: ItemActivityListBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(data:ListActivitiesItem){
+            binding.apply{
+                binding.activityName.text = data.activityName
+            }
+        }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_activity_list, parent, false)
-        return ListViewHolder(view)
+    override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ListViewHolder {
+        val binding = ItemActivityListBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
+        return ListViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val (name) = activityList[position]
-        holder.tvName.text = name
+        holder.bind(activityList[position])
     }
 
     override fun getItemCount(): Int = activityList.size
+
 
 }

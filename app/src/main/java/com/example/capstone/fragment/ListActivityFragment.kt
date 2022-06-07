@@ -1,22 +1,26 @@
 package com.example.capstone.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.capstone.ModelFactory
 import com.example.capstone.adapter.ActivityListAdapter
-import com.example.capstone.dataClass.ActivityName
-import com.example.capstone.R
 import com.example.capstone.databinding.FragmentListActivityBinding
+import com.example.capstone.model.ListActivitiesModel
+import com.example.capstone.response.ListActivitiesItem
 
 class ListActivityFragment : Fragment() {
     private lateinit var binding: FragmentListActivityBinding
-    private lateinit var adapter: RecyclerView
-    private val listActivity = ArrayList<ActivityName>()
+    private lateinit var rvStory: RecyclerView
+    private lateinit var listActivity: ArrayList<ListActivitiesItem>
+    private lateinit var factory: ModelFactory
+    private val model: ListActivitiesModel by viewModels { factory }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,27 +37,27 @@ class ListActivityFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapter = binding.rvActivityList
-        adapter.setHasFixedSize(true)
-        listActivity.addAll(listActivities)
-        showRecyclerList()
+        rvStory = binding.rvActivityList
+        rvStory.setHasFixedSize(true)
+        val layoutManager = LinearLayoutManager(this.context)
+        binding.rvActivityList.layoutManager = layoutManager
+        factory = ModelFactory.getInstance(this.requireContext())
+
+        model.listActivities.observe(viewLifecycleOwner) {
+            listActivity = it.data.activities as ArrayList<ListActivitiesItem>
+            Log.d("story", listActivity.toString())
+        }
+        model.getListActivity()
+        settingAdapter()
     }
 
-    private val listActivities: ArrayList<ActivityName>
-        get() {
-            val dataName = resources.getStringArray(R.array.activity_name_list)
-            val activity = ArrayList<ActivityName>()
-            for (i in dataName.indices) {
-                val list = ActivityName(dataName[i])
-                activity.add(list)
+    private fun settingAdapter() {
+        model.listActivities.observe(viewLifecycleOwner) {
+                adapter ->
+            if (adapter != null) {
+                binding.rvActivityList.adapter = ActivityListAdapter(adapter.data.activities)
             }
-            return activity
         }
-
-    private fun showRecyclerList() {
-        adapter.layoutManager = LinearLayoutManager(this.context)
-        val listActivityAdapter = ActivityListAdapter(listActivity)
-        adapter.adapter = listActivityAdapter
     }
 
 }

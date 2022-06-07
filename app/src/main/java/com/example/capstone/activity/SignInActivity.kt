@@ -14,7 +14,6 @@ class SignInActivity : AppCompatActivity() {
     companion object {
         private const val FIELD_REQUIRED = "Cannot Be Empty"
         private const val FIELD_IS_NOT_VALID = "Invalid Email"
-        const val IDUSER = "idUser"
     }
 
     private lateinit var binding: ActivitySignInBinding
