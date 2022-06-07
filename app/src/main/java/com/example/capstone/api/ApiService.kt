@@ -35,7 +35,7 @@ interface ApiService {
     ): Call<ListActivitiesResponse>
 
     @Multipart
-    @POST("home/activities/{id_user}")
+    @POST("home/activities/{id}")
     fun addingActivities(
         @Header("Authorization") token: String,
         @Part("activityName") activityName: String,

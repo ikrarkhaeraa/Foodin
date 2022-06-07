@@ -2,7 +2,10 @@ package com.example.capstone.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.capstone.R
+import com.example.capstone.data.entity.ActivityEntity
 import com.example.capstone.databinding.ItemActivityListBinding
 import com.example.capstone.response.ListActivitiesItem
 

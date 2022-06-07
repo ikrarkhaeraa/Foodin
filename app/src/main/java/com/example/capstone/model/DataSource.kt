@@ -2,10 +2,14 @@ package com.example.capstone.model
 
 import android.util.Log
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.asLiveData
+import com.example.capstone.AppExecutors
 import com.example.capstone.UserPreferences
 import com.example.capstone.api.ApiConfig
+import com.example.capstone.data.entity.ActivityEntity
+import com.example.capstone.data.room.Dao
 import com.example.capstone.response.SignInResponse
 import com.example.capstone.response.*
 import retrofit2.Call
@@ -14,6 +18,8 @@ import retrofit2.Response
 
 class DataSource private constructor(
     private val pref: UserPreferences,
+    private val activityDao: Dao,
+    private val appExecutors: AppExecutors
 ) {
 
     companion object {
@@ -21,11 +27,15 @@ class DataSource private constructor(
         private var instance: DataSource? = null
         fun getInstance(
             preferences: UserPreferences,
+            activityDao: Dao,
+            appExecutors: AppExecutors
         ): DataSource =
             instance ?: synchronized(this) {
-                instance ?: DataSource(preferences)
+                instance ?: DataSource(preferences, activityDao, appExecutors)
             }.also { instance = it }
     }
+
+    private val result = MediatorLiveData<Result<List<ActivityEntity>>>()
 
     private val _signUp = MutableLiveData<SignUpResponse>()
     val signUp: LiveData<SignUpResponse> = _signUp
@@ -186,6 +196,17 @@ class DataSource private constructor(
 
     suspend fun userLogout() {
         pref.logout()
+    }
+
+    fun getBookmarked(): LiveData<List<ActivityEntity>> {
+        return activityDao.getBookmarked()
+    }
+
+    fun setBookmarked(added: ActivityEntity, bookmarkState: Boolean) {
+        appExecutors.diskIO.execute {
+            added.isBookmarked = bookmarkState
+            activityDao.updateNews(added)
+        }
     }
 
 }
