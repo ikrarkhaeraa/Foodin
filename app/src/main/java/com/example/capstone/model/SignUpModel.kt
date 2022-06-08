@@ -9,10 +9,10 @@ import kotlinx.coroutines.launch
 class SignUpModel(private val data: DataSource) : ViewModel() {
     val signUp: LiveData<SignUpResponse> = data.signUp
 
-    fun postDataSignUp(email:String, password:String, weightCurrent: Int, height:Int, gender:String,
+    fun postDataSignUp(email:String, password:String, name: String, weightCurrent: Int, height:Int, gender:String,
                        age:Int, goals:String) {
         viewModelScope.launch {
-            data.uploadSignUpData(email, password, weightCurrent, height,
+            data.uploadSignUpData(email, password, name, weightCurrent, height,
                 gender, age, goals)
         }
     }

@@ -15,6 +15,7 @@ import com.example.capstone.model.SignUpModel
 class GenderActivity : AppCompatActivity() {
 
     companion object {
+        const val NAME = "name"
         const val PASSWORD = "password"
         const val EMAIL = "email"
         const val GOALS = "goals"
@@ -45,6 +46,7 @@ class GenderActivity : AppCompatActivity() {
         numberPicker.setOnValueChangedListener {
                 _, _, newValue -> currentWeight.text = "YOUR GENDER IS: " + chooseGender[newValue]
             val gender = chooseGender[newValue]
+            val name = intent.getStringExtra(NAME)
             val email = intent.getStringExtra(EMAIL)
             val password = intent.getStringExtra(PASSWORD)
             val goals = intent.getStringExtra(GOALS)
@@ -52,6 +54,7 @@ class GenderActivity : AppCompatActivity() {
             val height = intent.getIntExtra(HEIGHT, 0)
             val age = intent.getIntExtra(AGE, 0)
 
+            Log.d("cekData", "$name")
             Log.d("cekData", "$email")
             Log.d("cekData", "$password")
             Log.d("cekData", "$goals")
@@ -61,13 +64,14 @@ class GenderActivity : AppCompatActivity() {
             Log.d("cekData", gender)
 
             binding.buttonNext.setOnClickListener {
-                if (email?.isNotEmpty() == true && password?.isNotEmpty() == true &&
+                if (name?.isNotEmpty() == true && email?.isNotEmpty() == true && password?.isNotEmpty() == true &&
                     goals?.isNotEmpty() == true && weight?.toString().isNotEmpty() &&
                     height?.toString().isNotEmpty() && age?.toString().isNotEmpty() && gender.isNotEmpty()
                 ) {
                     model.postDataSignUp(
                         email.toString(),
                         password.toString(),
+                        name.toString(),
                         height,
                         weight,
                         gender,
@@ -88,13 +92,5 @@ class GenderActivity : AppCompatActivity() {
                 startActivity(intent)
         }
     }
-
-//    private fun showLoading(isLoading: Boolean) {
-//        if (isLoading) {
-//            binding.progressBar.visibility = View.VISIBLE
-//        } else {
-//            binding.progressBar.visibility = View.GONE
-//        }
-//    }
 
 }

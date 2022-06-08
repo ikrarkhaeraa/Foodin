@@ -25,14 +25,17 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun clickButton() {
         binding.apply {
+            val name = binding.edtName.text.toString().trim()
             val email = binding.edtEmail.text.toString().trim()
             val password = binding.edtPassword.text.toString().trim()
             signUp.setOnClickListener {
-                if (email.isEmpty() && password.isEmpty() && isValidEmail(email)) {
+                if (name.isEmpty() && email.isEmpty() && password.isEmpty() && isValidEmail(email)) {
+                    edtName.error = FIELD_REQUIRED
                     edtEmail.error = FIELD_IS_NOT_VALID
                     edtPassword.error = FIELD_REQUIRED
                 } else {
                     val intentToNextPage = Intent(this@SignUpActivity, GoalsActivity::class.java)
+                    intentToNextPage.putExtra(GoalsActivity.NAME, edtName.text.toString())
                     intentToNextPage.putExtra(GoalsActivity.EMAIL, edtEmail.text.toString())
                     intentToNextPage.putExtra(GoalsActivity.PASSWORD, edtPassword.text.toString())
                     startActivity(intentToNextPage)

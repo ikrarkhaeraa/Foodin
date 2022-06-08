@@ -8,6 +8,7 @@ import com.example.capstone.databinding.ActivityGoalsBinding
 class GoalsActivity : AppCompatActivity() {
 
     companion object {
+        const val NAME = "name"
         const val PASSWORD = "password"
         const val EMAIL = "email"
     }
@@ -22,11 +23,13 @@ class GoalsActivity : AppCompatActivity() {
     }
 
     private fun chooseButton() {
-        var email = intent.getStringExtra(EMAIL)
-        var password = intent.getStringExtra(PASSWORD)
+        val name = intent.getStringExtra(NAME)
+        val email = intent.getStringExtra(EMAIL)
+        val password = intent.getStringExtra(PASSWORD)
         binding.apply {
             blueRectangle.setOnClickListener {
                 val intentToNextPage = Intent(this@GoalsActivity, CurrentWeightActivity::class.java)
+                intentToNextPage.putExtra(CurrentWeightActivity.NAME, name)
                 intentToNextPage.putExtra(CurrentWeightActivity.EMAIL, password)
                 intentToNextPage.putExtra(CurrentWeightActivity.PASSWORD, email)
                 intentToNextPage.putExtra(CurrentWeightActivity.GOALS, "Gain Weight")
@@ -34,6 +37,7 @@ class GoalsActivity : AppCompatActivity() {
             }
             blueRectangle2.setOnClickListener {
                 val intentToNextPage = Intent(this@GoalsActivity, CurrentWeightActivity::class.java)
+                intentToNextPage.putExtra(CurrentWeightActivity.NAME, name)
                 intentToNextPage.putExtra(CurrentWeightActivity.EMAIL, email)
                 intentToNextPage.putExtra(CurrentWeightActivity.PASSWORD, password)
                 intentToNextPage.putExtra(CurrentWeightActivity.GOALS, "Maintain Weight")
@@ -41,6 +45,7 @@ class GoalsActivity : AppCompatActivity() {
             }
             blueRectangle3.setOnClickListener {
                 val intentToNextPage = Intent(this@GoalsActivity, CurrentWeightActivity::class.java)
+                intentToNextPage.putExtra(CurrentWeightActivity.NAME, name)
                 intentToNextPage.putExtra(CurrentWeightActivity.EMAIL, email)
                 intentToNextPage.putExtra(CurrentWeightActivity.PASSWORD, password)
                 intentToNextPage.putExtra(CurrentWeightActivity.GOALS, "Loss Weight")

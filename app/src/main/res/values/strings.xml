@@ -53,6 +53,7 @@ recommendations based on their activity and calorie requirement.</string>
     <string name="current_height">YOUR CURRENT HEIGHT IS: </string>
     <string name="current_age">YOUR CURRENT AGE IS: </string>
     <string name="gender">YOUR GENDER IS: </string>
+    <string name="name">Name </string>
 
     <string-array name="activity_name_list">
         <item>SCHOOL</item>

@@ -9,6 +9,7 @@ import com.example.capstone.databinding.ActivityCurrentAgeBinding
 class CurrentAgeActivity : AppCompatActivity() {
 
     companion object {
+        const val NAME = "name"
         const val PASSWORD = "password"
         const val EMAIL = "email"
         const val GOALS = "goals"
@@ -34,15 +35,17 @@ class CurrentAgeActivity : AppCompatActivity() {
                 _, _, newValue -> currentWeight.text = "YOUR CURRENT AGE IS: $newValue"
 
             binding.buttonNext.setOnClickListener {
-                var email = intent.getStringExtra(EMAIL)
-                var password = intent.getStringExtra(PASSWORD)
-                var goals = intent.getStringExtra(GOALS)
-                var weight = intent.getIntExtra(WEIGHT, 0)
-                var height = intent.getIntExtra(HEIGHT, 0)
+                val name = intent.getStringExtra(NAME)
+                val email = intent.getStringExtra(EMAIL)
+                val password = intent.getStringExtra(PASSWORD)
+                val goals = intent.getStringExtra(GOALS)
+                val weight = intent.getIntExtra(WEIGHT, 0)
+                val height = intent.getIntExtra(HEIGHT, 0)
                 if (newValue.toString().isEmpty()) {
                     Toast.makeText(applicationContext,"please input your age", Toast.LENGTH_SHORT).show()
                 } else {
                     val intentToNextPage = Intent(this@CurrentAgeActivity, GenderActivity::class.java)
+                    intentToNextPage.putExtra(GenderActivity.NAME, name)
                     intentToNextPage.putExtra(GenderActivity.EMAIL, password)
                     intentToNextPage.putExtra(GenderActivity.PASSWORD, email)
                     intentToNextPage.putExtra(GenderActivity.GOALS, goals)

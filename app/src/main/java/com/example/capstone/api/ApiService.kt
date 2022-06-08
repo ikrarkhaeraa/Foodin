@@ -10,6 +10,7 @@ interface ApiService {
     fun uploadDataSignUp(
         @Field("email") email: String,
         @Field("password") password: String,
+        @Field("name") name: String,
         @Field("weightCurrent") weightCurrent: Int,
         @Field("height") height: Int,
         @Field("gender") gender: String,

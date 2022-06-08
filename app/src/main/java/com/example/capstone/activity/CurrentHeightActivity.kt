@@ -10,6 +10,7 @@ import com.example.capstone.databinding.ActivityCurrentWeightBinding
 class CurrentHeightActivity : AppCompatActivity() {
 
     companion object {
+        const val NAME = "name"
         const val PASSWORD = "password"
         const val EMAIL = "email"
         const val GOALS = "goals"
@@ -34,14 +35,16 @@ class CurrentHeightActivity : AppCompatActivity() {
                 _, _, newValue -> currentWeight.text = "YOUR CURRENT HEIGHT IS: $newValue"
 
             binding.buttonNext.setOnClickListener {
-                var email = intent.getStringExtra(EMAIL)
-                var password = intent.getStringExtra(PASSWORD)
-                var goals = intent.getStringExtra(GOALS)
-                var weight = intent.getIntExtra(WEIGHT, 0)
+                val name = intent.getStringExtra(NAME)
+                val email = intent.getStringExtra(EMAIL)
+                val password = intent.getStringExtra(PASSWORD)
+                val goals = intent.getStringExtra(GOALS)
+                val weight = intent.getIntExtra(WEIGHT, 0)
                 if (newValue.toString().isEmpty()) {
                     Toast.makeText(applicationContext,"please input your height", Toast.LENGTH_SHORT).show()
                 } else {
                     val intentToNextPage = Intent(this@CurrentHeightActivity, CurrentAgeActivity::class.java)
+                    intentToNextPage.putExtra(CurrentAgeActivity.NAME, name)
                     intentToNextPage.putExtra(CurrentAgeActivity.EMAIL, password)
                     intentToNextPage.putExtra(CurrentAgeActivity.PASSWORD, email)
                     intentToNextPage.putExtra(CurrentAgeActivity.GOALS, goals)

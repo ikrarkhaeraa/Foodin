@@ -55,10 +55,10 @@ class DataSource private constructor(
     private val _getFood = MutableLiveData<FoodListResponse>()
     val getFood: LiveData<FoodListResponse> = _getFood
 
-    fun uploadSignUpData(email:String, password:String, weightCurrent: Int, height:Int, gender:String,
+    fun uploadSignUpData(email:String, password:String, name: String, weightCurrent: Int, height:Int, gender:String,
                          age:Int, goals:String) {
         val client = ApiConfig.getApiService()
-            .uploadDataSignUp(email, password, weightCurrent, height,
+            .uploadDataSignUp(email, password, name, weightCurrent, height,
             gender, age, goals)
         client.enqueue(object : Callback<SignUpResponse> {
             override fun onResponse(
