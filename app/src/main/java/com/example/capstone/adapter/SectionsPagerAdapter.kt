@@ -17,7 +17,7 @@ class SectionsPagerAdapter(activity: AppCompatActivity, private val data: DataSo
         var fragment: Fragment? = null
         when (position) {
             0 -> fragment = ListActivityFragment(activityDao)
-            1 -> fragment = AddedActivityFragment(data)
+            1 -> fragment = AddedActivityFragment(data, activityDao)
         }
         return fragment as Fragment
     }

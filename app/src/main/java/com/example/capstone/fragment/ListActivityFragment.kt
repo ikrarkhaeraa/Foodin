@@ -61,4 +61,14 @@ class ListActivityFragment (private val activityDao: Dao) : Fragment() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        model.listActivities.observe(viewLifecycleOwner) {
+                adapter ->
+            if (adapter != null) {
+                binding.rvActivityList.adapter = ActivityListAdapter(adapter.data.activities, activityDao)
+            }
+        }
+    }
+
 }

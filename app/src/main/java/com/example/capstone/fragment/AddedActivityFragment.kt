@@ -10,10 +10,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.capstone.activity.ResultActivity
 import com.example.capstone.adapter.ActivityAddedAdapter
+import com.example.capstone.data.room.Dao
 import com.example.capstone.databinding.FragmentAddedActivityBinding
 import com.example.capstone.model.DataSource
 
-class AddedActivityFragment (private val data: DataSource) : Fragment() {
+class AddedActivityFragment (private val data: DataSource, private val dao: Dao) : Fragment() {
     private lateinit var binding: FragmentAddedActivityBinding
     private lateinit var adapter: RecyclerView
 
@@ -25,7 +26,7 @@ class AddedActivityFragment (private val data: DataSource) : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentAddedActivityBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
@@ -51,8 +52,9 @@ class AddedActivityFragment (private val data: DataSource) : Fragment() {
 
     private fun showRecyclerList() {
         adapter.layoutManager = LinearLayoutManager(context)
-        val addedActivityAdapter = ActivityAddedAdapter(data)
+        val addedActivityAdapter = ActivityAddedAdapter(data, dao)
         adapter.adapter = addedActivityAdapter
+        data.getActivity()
     }
 
     private fun toResult() {
@@ -60,5 +62,12 @@ class AddedActivityFragment (private val data: DataSource) : Fragment() {
             val intentToResult = Intent(this.context, ResultActivity::class.java)
             startActivity(intentToResult)
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        adapter.layoutManager = LinearLayoutManager(context)
+        val addedActivityAdapter = ActivityAddedAdapter(data, dao)
+        adapter.adapter = addedActivityAdapter
     }
 }
