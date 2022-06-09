@@ -39,6 +39,7 @@ interface ApiService {
     @POST("home/activities/{id}")
     fun addingActivities(
         @Header("Authorization") token: String,
+        @Path("id") id: String,
         @Part("activityName") activityName: String,
         @Field("duration") duration: Int,
     ):Call<AddingActivitiesResponse>
@@ -46,6 +47,7 @@ interface ApiService {
     @GET("foods/{id}")
     fun getFood(
         @Header("Authorization") token: String,
+        @Path("id") id: String
     ): Call<FoodListResponse>
 
 }

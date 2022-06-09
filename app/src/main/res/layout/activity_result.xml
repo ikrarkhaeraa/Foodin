@@ -14,6 +14,7 @@
         android:gravity="center"
         android:text="@string/here_result"
         android:textSize="40sp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -21,13 +22,117 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.039" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_result"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+    <TextView
+        android:id="@+id/set1_button"
+        android:layout_width="335dp"
+        android:layout_height="187dp"
+        android:background="@drawable/bluerectangle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/result_caption"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/result_caption"
+        app:layout_constraintVertical_bias="0.068"
+        tools:ignore="MissingConstraints">
+    </TextView>
+
+    <TextView
+        android:id="@+id/result1_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rambla"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="@+id/set1_button"
+        app:layout_constraintEnd_toEndOf="@+id/set1_button"
+        app:layout_constraintStart_toEndOf="@+id/photo1_result"
+        app:layout_constraintTop_toTopOf="@+id/set1_button"
+        tools:text="@string/set1_result" />
+
+    <ImageView
+        android:id="@+id/photo1_result"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="@+id/set1_button"
+        app:layout_constraintEnd_toEndOf="@+id/set1_button"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toStartOf="@+id/set1_button"
+        app:layout_constraintTop_toTopOf="@+id/set1_button"
+        app:layout_constraintVertical_bias="0.508"
+        tools:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/set2_button"
+        android:layout_width="335dp"
+        android:layout_height="187dp"
+        android:background="@drawable/bluerectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/set1_button"
+        app:layout_constraintVertical_bias="0.068"
+        tools:ignore="MissingConstraints">
+    </TextView>
+
+    <TextView
+        android:id="@+id/result2_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rambla"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="@+id/set2_button"
+        app:layout_constraintEnd_toEndOf="@+id/set2_button"
+        app:layout_constraintStart_toEndOf="@+id/photo2_result"
+        app:layout_constraintTop_toTopOf="@+id/set2_button"
+        tools:text="@string/set2_result" />
+
+    <ImageView
+        android:id="@+id/photo2_result"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="@+id/set2_button"
+        app:layout_constraintEnd_toEndOf="@+id/set2_button"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toStartOf="@+id/set2_button"
+        app:layout_constraintTop_toTopOf="@+id/set2_button"
+        app:layout_constraintVertical_bias="0.508"
+        tools:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/set3_button"
+        android:layout_width="335dp"
+        android:layout_height="187dp"
+        android:background="@drawable/bluerectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/set2_button"
+        app:layout_constraintVertical_bias="0.297"
+        tools:ignore="MissingConstraints"/>
+
+    <TextView
+        android:id="@+id/result3_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rambla"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="@+id/set3_button"
+        app:layout_constraintEnd_toEndOf="@+id/set3_button"
+        app:layout_constraintStart_toEndOf="@+id/photo3_result"
+        app:layout_constraintTop_toTopOf="@+id/set3_button"
+        tools:text="@string/set3_result" />
+
+    <ImageView
+        android:id="@+id/photo3_result"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="@+id/set3_button"
+        app:layout_constraintEnd_toEndOf="@+id/set3_button"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toStartOf="@+id/set3_button"
+        app:layout_constraintTop_toTopOf="@+id/set3_button"
+        app:layout_constraintVertical_bias="0.594"
+        tools:srcCompat="@drawable/logo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

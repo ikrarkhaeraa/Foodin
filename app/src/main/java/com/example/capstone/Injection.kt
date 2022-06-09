@@ -6,6 +6,8 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.room.Database
 import com.example.capstone.data.room.ActivityDatabase
+import com.example.capstone.data.room.Dao
+import com.example.capstone.model.CalorieModel
 import com.example.capstone.model.DataSource
 
 private val Context.database: DataStore<Preferences> by preferencesDataStore("token")

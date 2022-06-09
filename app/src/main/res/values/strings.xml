@@ -14,7 +14,9 @@
     <string name="foodin">FOODIN</string>
     <string name="setting">Setting</string>
     <string name="here_result">HERE IS THE RESULT</string>
-    <string name="set_result">SET 1</string>
+    <string name="set1_result">SET 1</string>
+    <string name="set2_result">SET 2</string>
+    <string name="set3_result">SET 3</string>
     <string name="set_detail">SET 1</string>
     <string name="breakfast">BREAKFAST</string>
     <string name="food_breakfast">Food : Fried Rice, Egg</string>

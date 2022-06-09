@@ -35,7 +35,7 @@ class DataSource private constructor(
             }.also { instance = it }
     }
 
-    private val result = MediatorLiveData<Result<List<ActivityEntity>>>()
+    //private val result = MediatorLiveData<Result<List<ActivityEntity>>>()
 
     private val _signUp = MutableLiveData<SignUpResponse>()
     val signUp: LiveData<SignUpResponse> = _signUp
@@ -126,7 +126,6 @@ class DataSource private constructor(
                 call: Call<ListActivitiesResponse>,
                 response: Response<ListActivitiesResponse>
             ) {
-                val responseBody = response.body()
                 if (response.isSuccessful) {
                     Log.e("listActivityResponse", "onResponse: ${response.message()}")
                     _listActivities.value = response.body()
@@ -140,14 +139,13 @@ class DataSource private constructor(
         })
     }
 
-    fun addingActivities (token: String, activityName: String, duration: Int) {
-        val client = ApiConfig.getApiService().addingActivities(token, activityName, duration)
+    fun addingActivities (token: String, id: String, activityName: String, duration: Int) {
+        val client = ApiConfig.getApiService().addingActivities(token, id, activityName, duration)
         client.enqueue(object : Callback<AddingActivitiesResponse> {
             override fun onResponse(
                 call: Call<AddingActivitiesResponse>,
                 response: Response<AddingActivitiesResponse>
             ) {
-                val responseBody = response.body()
                 if (response.isSuccessful) {
                     Log.e("addResponse", "onResponse: ${response.message()}")
                     _add.value = response.body()
@@ -161,14 +159,13 @@ class DataSource private constructor(
         })
     }
 
-    fun getListFood (token: String) {
-        val client = ApiConfig.getApiService().getFood(token)
+    fun getListFood (token: String, id: String) {
+        val client = ApiConfig.getApiService().getFood(token, id)
         client.enqueue(object : Callback<FoodListResponse> {
             override fun onResponse(
                 call: Call<FoodListResponse>,
                 response: Response<FoodListResponse>
             ) {
-                val responseBody = response.body()
                 if (response.isSuccessful) {
                     Log.e("addResponse", "onResponse: ${response.message()}")
                     _getFood.value = response.body()
@@ -198,15 +195,25 @@ class DataSource private constructor(
         pref.logout()
     }
 
-    fun getBookmarked(): LiveData<List<ActivityEntity>> {
-        return activityDao.getBookmarked()
+
+    fun addActivity(activityName: String) {
+        appExecutors.diskIO.execute{
+            activityDao.addActivity(activityName)
+        }
     }
 
-    fun setBookmarked(added: ActivityEntity, bookmarkState: Boolean) {
-        appExecutors.diskIO.execute {
-            added.isBookmarked = bookmarkState
-            activityDao.updateNews(added)
+    fun deleteActivity(activityName: String) {
+        appExecutors.diskIO.execute{
+            activityDao.deleteActivity(activityName)
         }
+    }
+
+    fun getActivity() : List<String>? {
+        return activityDao.getActivity()
+    }
+
+    fun getDao() : Dao {
+        return activityDao
     }
 
 }

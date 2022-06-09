@@ -8,6 +8,11 @@ import com.example.capstone.databinding.ActivityResultBinding
 
 class DetailActivity : AppCompatActivity() {
 
+    companion object {
+        const val SETNAME = "name"
+        const val SETFOOD = "food"
+    }
+
     private lateinit var binding: ActivityDetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

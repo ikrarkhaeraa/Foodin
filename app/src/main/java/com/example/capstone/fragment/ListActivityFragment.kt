@@ -11,11 +11,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.capstone.ModelFactory
 import com.example.capstone.adapter.ActivityListAdapter
+import com.example.capstone.data.room.Dao
 import com.example.capstone.databinding.FragmentListActivityBinding
 import com.example.capstone.model.ListActivitiesModel
 import com.example.capstone.response.ListActivitiesItem
 
-class ListActivityFragment : Fragment() {
+class ListActivityFragment (private val activityDao: Dao) : Fragment() {
     private lateinit var binding: FragmentListActivityBinding
     private lateinit var rvStory: RecyclerView
     private lateinit var listActivity: ArrayList<ListActivitiesItem>
@@ -55,7 +56,7 @@ class ListActivityFragment : Fragment() {
         model.listActivities.observe(viewLifecycleOwner) {
                 adapter ->
             if (adapter != null) {
-                binding.rvActivityList.adapter = ActivityListAdapter(adapter.data.activities)
+                binding.rvActivityList.adapter = ActivityListAdapter(adapter.data.activities, activityDao)
             }
         }
     }

@@ -1,13 +1,18 @@
 package com.example.capstone.response
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class FoodListResponse(
 
 	@field:SerializedName("foodLists")
 	val foodLists: List<FoodListsItem>
-)
 
+) : Parcelable
+
+@Parcelize
 data class Lunch(
 
 	@field:SerializedName("fruit")
@@ -18,8 +23,9 @@ data class Lunch(
 
 	@field:SerializedName("food")
 	val food: String
-)
+) : Parcelable
 
+@Parcelize
 data class Dinner(
 
 	@field:SerializedName("fruit")
@@ -30,8 +36,9 @@ data class Dinner(
 
 	@field:SerializedName("food")
 	val food: String
-)
+) : Parcelable
 
+@Parcelize
 data class Breakfast(
 
 	@field:SerializedName("fruit")
@@ -42,8 +49,9 @@ data class Breakfast(
 
 	@field:SerializedName("food")
 	val food: String
-)
+) : Parcelable
 
+@Parcelize
 data class FoodListsItem(
 
 	@field:SerializedName("dinner")
@@ -54,4 +62,4 @@ data class FoodListsItem(
 
 	@field:SerializedName("breakfast")
 	val breakfast: Breakfast
-)
+) : Parcelable

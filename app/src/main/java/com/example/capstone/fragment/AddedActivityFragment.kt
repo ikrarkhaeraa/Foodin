@@ -8,16 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.capstone.dataClass.ActivityNameAdded
-import com.example.capstone.R
 import com.example.capstone.activity.ResultActivity
 import com.example.capstone.adapter.ActivityAddedAdapter
 import com.example.capstone.databinding.FragmentAddedActivityBinding
+import com.example.capstone.model.DataSource
 
-class AddedActivityFragment : Fragment() {
+class AddedActivityFragment (private val data: DataSource) : Fragment() {
     private lateinit var binding: FragmentAddedActivityBinding
     private lateinit var adapter: RecyclerView
-    private val addedActivity = ArrayList<ActivityNameAdded>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,25 +34,24 @@ class AddedActivityFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         adapter = binding.rvActivityAdded
         adapter.setHasFixedSize(true)
-        addedActivity.addAll(listActivities)
         showRecyclerList()
         toResult()
     }
 
-    private val listActivities: ArrayList<ActivityNameAdded>
-        get() {
-            val dataName = resources.getStringArray(R.array.activity_added_list)
-            val activity = ArrayList<ActivityNameAdded>()
-            for (i in dataName.indices) {
-                val list = ActivityNameAdded(dataName[i])
-                activity.add(list)
-            }
-            return activity
-        }
+//    private val listActivities: ArrayList<ActivityNameAdded>
+//        get() {
+//            val dataName = resources.getStringArray(R.array.activity_added_list)
+//            val activity = ArrayList<ActivityNameAdded>()
+//            for (i in dataName.indices) {
+//                val list = ActivityNameAdded(dataName[i])
+//                activity.add(list)
+//            }
+//            return activity
+//        }
 
     private fun showRecyclerList() {
         adapter.layoutManager = LinearLayoutManager(context)
-        val addedActivityAdapter = ActivityAddedAdapter(addedActivity)
+        val addedActivityAdapter = ActivityAddedAdapter(data)
         adapter.adapter = addedActivityAdapter
     }
 

@@ -10,9 +10,9 @@ class ActivityEntity(
     @field:PrimaryKey
     val activityName: String,
 
-    @field:ColumnInfo(name = "duration")
-    val duration: Int,
-
-    @field:ColumnInfo(name = "bookmarked")
-    var isBookmarked: Boolean
+//    @field:ColumnInfo(name = "duration")
+//    val duration: Int,
+//
+//    @field:ColumnInfo(name = "bookmarked")
+//    var isBookmarked: Boolean
 )

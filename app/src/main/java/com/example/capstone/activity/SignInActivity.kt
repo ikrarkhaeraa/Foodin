@@ -76,6 +76,7 @@ class SignInActivity : AppCompatActivity() {
         model.signIn.observe(this@SignInActivity) {
                 val intent = Intent(this@SignInActivity, MainActivity::class.java)
                 startActivity(intent)
+                finish()
         }
     }
 

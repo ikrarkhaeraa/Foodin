@@ -18,7 +18,7 @@ abstract class ActivityDatabase : RoomDatabase() {
                 instance ?: Room.databaseBuilder(
                     context.applicationContext,
                     ActivityDatabase::class.java, "News.db"
-                ).build()
+                ).allowMainThreadQueries().build()
             }
     }
 }
