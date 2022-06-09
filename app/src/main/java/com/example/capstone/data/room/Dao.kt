@@ -16,15 +16,15 @@ interface Dao {
 //    @Query("DELETE FROM activityList WHERE bookmarked = 0")
 //    fun deleteAll()
 //
-//    @Query("SELECT EXISTS(SELECT * FROM activityList WHERE activityName = :activityName AND bookmarked = 1)")
-//    fun isBookmarked(activityName: String): Boolean
+    @Query("SELECT EXISTS(SELECT * FROM activityList WHERE id = :id)")
+    fun isBookmarked(id: String): Boolean
 
-    @Query("INSERT INTO activityList values (:activityName)")
-    fun addActivity(activityName: String)
+    @Query("INSERT INTO activityList (id, activityName) values (:id, :activityName)")
+    fun addActivity(id: String, activityName: String)
 
-    @Query("DELETE FROM activityList WHERE activityName = :activityName")
-    fun deleteActivity(activityName: String)
+    @Query("DELETE FROM activityList WHERE id = :id")
+    fun deleteActivity(id: String)
 
     @Query("SELECT * FROM activityList")
-    fun getActivity() : List<String>?
+    fun getActivity() : List<ActivityEntity>?
 }

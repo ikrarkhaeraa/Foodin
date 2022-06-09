@@ -6,9 +6,12 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "activityList")
 class ActivityEntity(
-    @field:ColumnInfo(name = "activityName")
+    @field:ColumnInfo(name = "id")
     @field:PrimaryKey
-    val activityName: String,
+    var id: String = "",
+
+    @field:ColumnInfo(name = "activityName")
+    var activityName: String = "",
 
 //    @field:ColumnInfo(name = "duration")
 //    val duration: Int,

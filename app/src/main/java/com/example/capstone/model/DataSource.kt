@@ -196,19 +196,25 @@ class DataSource private constructor(
     }
 
 
-    fun addActivity(activityName: String) {
+    fun addActivity(id: String, activityName: String) {
         appExecutors.diskIO.execute{
-            activityDao.addActivity(activityName)
+            activityDao.addActivity(id, activityName)
         }
     }
 
-    fun deleteActivity(activityName: String) {
+    fun deleteActivity(id: String) {
         appExecutors.diskIO.execute{
-            activityDao.deleteActivity(activityName)
+            activityDao.deleteActivity(id)
         }
     }
 
-    fun getActivity() : List<String>? {
+    fun isBookmarked(id: String) {
+        appExecutors.diskIO.execute {
+            activityDao.isBookmarked(id)
+        }
+    }
+
+    fun getActivity() : List<ActivityEntity>? {
         return activityDao.getActivity()
     }
 

@@ -18,13 +18,13 @@ class AddingActivitiesModel(private val data: DataSource) : ViewModel() {
         }
     }
 
-    fun getActivity() : List<String>? {
-        var activityName : List<String>? = null
-        viewModelScope.launch {
-            activityName = data.getActivity()
-        }
-        return activityName
-    }
+//    fun getActivity() : List<String>? {
+//        var activityName : List<String>? = null
+//        viewModelScope.launch {
+//            activityName = data.getActivity()
+//        }
+//        return activityName
+//    }
 
     fun postDataAdding(token:String, id:String, activityName:String, duration:Int) {
         viewModelScope.launch {

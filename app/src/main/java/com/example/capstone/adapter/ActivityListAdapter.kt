@@ -1,6 +1,8 @@
 package com.example.capstone.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
@@ -34,9 +36,17 @@ class ActivityListAdapter (private val activityList: List<ListActivitiesItem>,
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         holder.bind(activityList[position])
 
-        val toggleBookmark = holder.binding.addToggle
-        if (toggleBookmark.isChecked) {
-            activityDao.addActivity(activityList[position].activityName)
+        val buttonBookmark = holder.binding.addButton
+        if (activityDao.isBookmarked(activityList[position].id)) {
+            buttonBookmark.visibility = View.INVISIBLE
+        } else {
+            buttonBookmark.visibility = View.VISIBLE
+            buttonBookmark.setOnClickListener {
+                activityDao.addActivity(activityList[position].id, activityList[position].activityName)
+                buttonBookmark.visibility = View.INVISIBLE
+                Log.d("cekAddButton", "${activityList[position].id}")
+                Log.d("cekAddButton", "${activityList[position].activityName}")
+            }
         }
     }
 

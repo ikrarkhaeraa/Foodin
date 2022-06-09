@@ -11,12 +11,12 @@ import kotlinx.coroutines.launch
 class ListActivitiesModel(private val data: DataSource) : ViewModel() {
     val listActivities: LiveData<ListActivitiesResponse> = data.listActivities
 
-    fun addActivity(activityName: String) {
-        viewModelScope.launch {
-            data.addActivity(activityName)
-            Log.d("addActivity", "$activityName")
-        }
-    }
+//    fun addActivity(activityName: String) {
+//        viewModelScope.launch {
+//            data.addActivity(activityName)
+//            Log.d("addActivity", "$activityName")
+//        }
+//    }
 
     fun getListActivity() {
         viewModelScope.launch {

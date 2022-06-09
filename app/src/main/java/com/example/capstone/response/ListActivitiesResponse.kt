@@ -16,12 +16,12 @@ data class ListActivitiesItem(
 	@field:SerializedName("activityName")
 	val activityName: String,
 
-	@field:SerializedName("id")
+	@field:SerializedName("_id")
 	val id: String
 )
 
 data class ListActivitiesData(
 
 	@field:SerializedName("Activities")
-	val activities: List<ListActivitiesItem>
+	val activities: ArrayList<ListActivitiesItem>
 )

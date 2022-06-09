@@ -113,18 +113,13 @@
             android:id="@+id/min_button"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginStart="224dp"
             android:background="@drawable/min_toggle"
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:textOff=""
             android:textOn=""
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/activity_added"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

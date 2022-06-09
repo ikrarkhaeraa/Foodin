@@ -33,8 +33,8 @@
             tools:layout_editor_absoluteX="10dp"
             tools:text="@string/activity_name" />
 
-        <ToggleButton
-            android:id="@+id/add_toggle"
+        <Button
+            android:id="@+id/add_button"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:background="@drawable/add_toggle"
