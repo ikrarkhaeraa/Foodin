@@ -53,8 +53,7 @@ class ListActivityFragment (private val activityDao: Dao) : Fragment() {
     }
 
     private fun settingAdapter() {
-        model.listActivities.observe(viewLifecycleOwner) {
-                adapter ->
+        model.listActivities.observe(viewLifecycleOwner) { adapter ->
             if (adapter != null) {
                 binding.rvActivityList.adapter = ActivityListAdapter(adapter.data.activities, activityDao)
             }

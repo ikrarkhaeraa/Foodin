@@ -16,9 +16,8 @@ import com.example.capstone.model.CalorieModel
 import com.example.capstone.model.ListActivitiesModel
 import com.example.capstone.response.ListActivitiesItem
 
-class ActivityListAdapter (private val activityList: List<ListActivitiesItem>,
-                           private val activityDao: Dao
-) : RecyclerView.Adapter<ActivityListAdapter.ListViewHolder>() {
+class ActivityListAdapter (private val activityList: List<ListActivitiesItem>, private val activityDao: Dao)
+    : RecyclerView.Adapter<ActivityListAdapter.ListViewHolder>() {
 
     inner class ListViewHolder(var binding: ItemActivityListBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(data:ListActivitiesItem){

@@ -11,20 +11,19 @@ import kotlinx.coroutines.launch
 class AddingActivitiesModel(private val data: DataSource) : ViewModel() {
     val addingActivitiesModel: LiveData<AddingActivitiesResponse> = data.add
 
-    fun deleteActivity(activityName: String) {
+    fun deleteActivity(id: String) {
         viewModelScope.launch {
-            data.deleteActivity(activityName)
-            Log.d("deleteActivity", "$activityName")
+            data.deleteActivity(id)
         }
     }
 
-//    fun getActivity() : List<String>? {
-//        var activityName : List<String>? = null
-//        viewModelScope.launch {
-//            activityName = data.getActivity()
-//        }
-//        return activityName
-//    }
+    fun getActivity() : List<ActivityEntity>? {
+        var activityName : List<ActivityEntity>? = null
+        viewModelScope.launch {
+            activityName = data.getActivity()
+        }
+        return activityName
+    }
 
     fun postDataAdding(token:String, id:String, activityName:String, duration:Int) {
         viewModelScope.launch {

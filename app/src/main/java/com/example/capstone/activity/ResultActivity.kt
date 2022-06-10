@@ -15,6 +15,7 @@ import com.example.capstone.databinding.ActivityMainBinding
 import com.example.capstone.databinding.ActivityResultBinding
 import com.example.capstone.model.CalorieModel
 import com.example.capstone.model.FoodListModel
+import com.example.capstone.response.ListActivitiesItem
 
 class ResultActivity : AppCompatActivity() {
 
@@ -43,9 +44,9 @@ class ResultActivity : AppCompatActivity() {
             Log.d("cekDataInResult", "$idUser")
             Log.d("cekFood", "${modelFood.getFoodList(token, idUser)}")
 
-            val listFood1 = modelFood.foodList.value?.foodLists
-            val listFood2 = modelFood.foodList.value?.foodLists
-            val listFood3 = modelFood.foodList.value?.foodLists
+//            val listFood1 = modelFood.foodList.value?.foodLists?.get(0)
+//            val listFood2 = modelFood.foodList.value?.foodLists?.get(1)
+//            val listFood3 = modelFood.foodList.value?.foodLists?.get(2)
 
             binding.apply {
                 set1Button.setOnClickListener {
