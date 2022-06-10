@@ -2,6 +2,7 @@ package com.example.capstone.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.example.capstone.R
 import com.example.capstone.databinding.ActivityDetailBinding
 import com.example.capstone.databinding.ActivityResultBinding
@@ -22,12 +23,13 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
-        setContentView(binding.root)
         setName()
         breakfast()
         brunch()
         lunch()
         dinner()
+        Log.d("cekSetFood", "$setFood")
+        setContentView(binding.root)
     }
 
     private fun setName() {
