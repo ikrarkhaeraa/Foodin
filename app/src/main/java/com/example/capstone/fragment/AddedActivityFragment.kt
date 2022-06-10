@@ -39,17 +39,6 @@ class AddedActivityFragment (private val data: DataSource, private val dao: Dao)
         toResult()
     }
 
-//    private val listActivities: ArrayList<ActivityNameAdded>
-//        get() {
-//            val dataName = resources.getStringArray(R.array.activity_added_list)
-//            val activity = ArrayList<ActivityNameAdded>()
-//            for (i in dataName.indices) {
-//                val list = ActivityNameAdded(dataName[i])
-//                activity.add(list)
-//            }
-//            return activity
-//        }
-
     private fun showRecyclerList() {
         adapter.layoutManager = LinearLayoutManager(context)
         val addedActivityAdapter = ActivityAddedAdapter(data, dao)

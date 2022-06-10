@@ -34,31 +34,37 @@ class ResultActivity : AppCompatActivity() {
     }
 
     private fun chooseResult() {
-        modelCalorie.getUserSession().observe(this) {
+        modelCalorie.getUserSession().observe(this@ResultActivity) {
             idUser = it.id
             token = it.token
-        }
-        modelFood.getFoodList(token,idUser)
-        Log.d("cekFood", "${modelFood.getFoodList(token, idUser)}")
-        val listFood1 = modelFood.foodList.value?.foodLists
-        val listFood2 = modelFood.foodList.value?.foodLists
-        val listFood3 = modelFood.foodList.value?.foodLists
-        binding.apply {
-            set1Button.setOnClickListener {
-                val intentToNextPage = Intent(this@ResultActivity, DetailActivity::class.java)
-                //intentToNextPage.putExtra(DetailActivity.SETFOOD, listFood1)
-                startActivity(intentToNextPage)
+            modelFood.getFoodList(token,idUser)
+
+            Log.d("cekDataInResult", "$token")
+            Log.d("cekDataInResult", "$idUser")
+            Log.d("cekFood", "${modelFood.getFoodList(token, idUser)}")
+
+            val listFood1 = modelFood.foodList.value?.foodLists
+            val listFood2 = modelFood.foodList.value?.foodLists
+            val listFood3 = modelFood.foodList.value?.foodLists
+
+            binding.apply {
+                set1Button.setOnClickListener {
+                    val intentToNextPage = Intent(this@ResultActivity, DetailActivity::class.java)
+                    //intentToNextPage.putExtra(DetailActivity.SETFOOD, listFood1)
+                    startActivity(intentToNextPage)
+                }
+                set2Button.setOnClickListener {
+                    val intentToNextPage = Intent(this@ResultActivity, DetailActivity::class.java)
+                    //intentToNextPage.putExtra(DetailActivity.SETFOOD, listFood2)
+                    startActivity(intentToNextPage)
+                }
+                set3Button.setOnClickListener {
+                    val intentToNextPage = Intent(this@ResultActivity, DetailActivity::class.java)
+                    //intentToNextPage.putExtra(DetailActivity.SETFOOD, listFood3)
+                    startActivity(intentToNextPage)
+                }
             }
-            set2Button.setOnClickListener {
-                val intentToNextPage = Intent(this@ResultActivity, DetailActivity::class.java)
-                //intentToNextPage.putExtra(DetailActivity.SETFOOD, listFood2)
-                startActivity(intentToNextPage)
-            }
-            set3Button.setOnClickListener {
-                val intentToNextPage = Intent(this@ResultActivity, DetailActivity::class.java)
-                //intentToNextPage.putExtra(DetailActivity.SETFOOD, listFood3)
-                startActivity(intentToNextPage)
-            }
+
         }
     }
 

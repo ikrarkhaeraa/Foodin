@@ -58,7 +58,8 @@
         app:layout_constraintStart_toStartOf="@+id/set1_button"
         app:layout_constraintTop_toTopOf="@+id/set1_button"
         app:layout_constraintVertical_bias="0.508"
-        tools:srcCompat="@drawable/logo" />
+        tools:srcCompat="@drawable/logo"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/set2_button"
@@ -96,7 +97,8 @@
         app:layout_constraintStart_toStartOf="@+id/set2_button"
         app:layout_constraintTop_toTopOf="@+id/set2_button"
         app:layout_constraintVertical_bias="0.508"
-        tools:srcCompat="@drawable/logo" />
+        tools:srcCompat="@drawable/logo"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/set3_button"
@@ -133,6 +135,7 @@
         app:layout_constraintStart_toStartOf="@+id/set3_button"
         app:layout_constraintTop_toTopOf="@+id/set3_button"
         app:layout_constraintVertical_bias="0.594"
-        tools:srcCompat="@drawable/logo" />
+        tools:srcCompat="@drawable/logo"
+        tools:ignore="ContentDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

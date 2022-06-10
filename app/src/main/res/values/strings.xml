@@ -22,6 +22,10 @@
     <string name="food_breakfast">Food : Fried Rice, Egg</string>
     <string name="drink_breakfast">Drink: Milk</string>
     <string name="fruit_breakfast">Fruit: Mango</string>
+    <string name="brunch">BRUNCH</string>
+    <string name="food_brunch">Food : Satay</string>
+    <string name="drink_brunch">Drink: Apel Juice</string>
+    <string name="fruit_brunch">Fruit: Banana</string>
     <string name="lunch">LUNCH</string>
     <string name="food_lunch">Food : Rice, Tofu</string>
     <string name="drink_lunch">Drink : Orange Juice</string>
