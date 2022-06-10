@@ -83,9 +83,15 @@ class MainActivity: AppCompatActivity() {
                 startActivity(intent)
             } else {
                 model.getCalorie(token, idUser)
-                binding.calorie.text = model.calorie.value?.data?.totalCalories.toString()
-                model.checkCalorie()
+                getUserCalorie()
             }
+        }
+    }
+
+    private fun getUserCalorie() {
+        model.calorie.observe(this@MainActivity) {
+            binding.calorie.text = model.calorie.value?.data?.totalCalories.toString()
+            model.checkCalorie()
         }
     }
 

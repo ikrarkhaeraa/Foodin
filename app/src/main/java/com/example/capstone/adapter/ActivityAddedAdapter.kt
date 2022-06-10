@@ -15,7 +15,7 @@ import com.example.capstone.model.DataSource
 class ActivityAddedAdapter (private val data: DataSource) : RecyclerView.Adapter<ActivityAddedAdapter.ListViewHolder>() {
 
     private var activityList : List<ActivityEntity>? = data.getActivity()
-    private var duration: ArrayList<Int> = arrayListOf(activityList?.size?: 0)
+    //private var duration: ArrayList<Int> = arrayListOf(activityList?.size?: 0)
 
     inner class ListViewHolder(var binding: ItemActivityAddedBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(data: ActivityEntity){
@@ -44,12 +44,12 @@ class ActivityAddedAdapter (private val data: DataSource) : RecyclerView.Adapter
         val intHours = tbHours.toInt()
         val tbMinutes = holder.binding.tbMinutes.text.toString()
         val intMinutes = tbMinutes.toInt()
-        duration[position] = (intHours*60) + intMinutes
+        //duration[position] = (intHours*60) + intMinutes
     }
 
     override fun getItemCount(): Int = activityList?.size?: 0
 
-    fun getDuration() {
-        Log.d("cekDuration", "$duration")
-    }
+//    fun getDuration() {
+//        Log.d("cekDuration", "$duration")
+//    }
 }

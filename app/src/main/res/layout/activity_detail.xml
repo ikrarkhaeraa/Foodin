@@ -99,7 +99,7 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
-            android:id="@+id/drink_breakfast"
+            android:id="@+id/vegetable_breakfast"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/rambla"
@@ -126,7 +126,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.038"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/drink_breakfast"
+            app:layout_constraintTop_toBottomOf="@+id/vegetable_breakfast"
             app:layout_constraintVertical_bias="0.018"
             tools:ignore="MissingConstraints" />
 
@@ -176,7 +176,7 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
-            android:id="@+id/drink_brunch"
+            android:id="@+id/vegetable_brunch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/rambla"
@@ -203,7 +203,7 @@
             app:layout_constraintEnd_toEndOf="@+id/bg_blue_detail"
             app:layout_constraintHorizontal_bias="0.045"
             app:layout_constraintStart_toStartOf="@+id/bg_blue_detail"
-            app:layout_constraintTop_toBottomOf="@+id/drink_brunch"
+            app:layout_constraintTop_toBottomOf="@+id/vegetable_brunch"
             app:layout_constraintVertical_bias="0.022"
             tools:ignore="MissingConstraints" />
 
@@ -252,7 +252,7 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
-            android:id="@+id/drink_lunch"
+            android:id="@+id/vegetable_lunch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/rambla"
@@ -279,7 +279,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.041"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/drink_lunch"
+            app:layout_constraintTop_toBottomOf="@+id/vegetable_lunch"
             app:layout_constraintVertical_bias="0.05"
             tools:ignore="MissingConstraints" />
 
@@ -329,7 +329,7 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
-            android:id="@+id/drink_dinner"
+            android:id="@+id/vegetable_dinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/rambla"
@@ -356,7 +356,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.04"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/drink_dinner"
+            app:layout_constraintTop_toBottomOf="@+id/vegetable_dinner"
             app:layout_constraintVertical_bias="0.264"
             tools:ignore="MissingConstraints" />
 

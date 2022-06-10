@@ -167,10 +167,10 @@ class DataSource private constructor(
                 response: Response<FoodListResponse>
             ) {
                 if (response.isSuccessful) {
-                    Log.e("addResponse", "onResponse: ${response.message()}")
+                    Log.e("cekFood", "onResponse: ${response.message()}")
                     _getFood.value = response.body()
                 } else {
-                    Log.e("add", "onFailure: ${response.message()}")
+                    Log.e("cekFood", "onFailure: ${response.message()}")
                 }
             }
             override fun onFailure(call: Call<FoodListResponse>, t: Throwable) {

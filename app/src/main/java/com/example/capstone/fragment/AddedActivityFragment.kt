@@ -48,7 +48,7 @@ class AddedActivityFragment (private val data: DataSource) : Fragment() {
         showRecyclerList()
         convertDuration()
         postAdding()
-        //toResult()
+        toResult()
     }
 
     private fun showRecyclerList() {
@@ -56,9 +56,9 @@ class AddedActivityFragment (private val data: DataSource) : Fragment() {
         val addedActivityAdapter = ActivityAddedAdapter(data)
         adapter.adapter = addedActivityAdapter
         data.getActivity()
-        binding.buttonAdded.setOnClickListener {
-            addedActivityAdapter.getDuration()
-        }
+//        binding.buttonAdded.setOnClickListener {
+//            addedActivityAdapter.getDuration()
+//        }
     }
 
     private fun toResult() {
