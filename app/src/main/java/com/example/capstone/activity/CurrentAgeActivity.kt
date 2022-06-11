@@ -46,8 +46,8 @@ class CurrentAgeActivity : AppCompatActivity() {
                 } else {
                     val intentToNextPage = Intent(this@CurrentAgeActivity, GenderActivity::class.java)
                     intentToNextPage.putExtra(GenderActivity.NAME, name)
-                    intentToNextPage.putExtra(GenderActivity.EMAIL, password)
-                    intentToNextPage.putExtra(GenderActivity.PASSWORD, email)
+                    intentToNextPage.putExtra(GenderActivity.EMAIL, email)
+                    intentToNextPage.putExtra(GenderActivity.PASSWORD, password)
                     intentToNextPage.putExtra(GenderActivity.GOALS, goals)
                     intentToNextPage.putExtra(GenderActivity.WEIGHT, weight)
                     intentToNextPage.putExtra(GenderActivity.HEIGHT, height)
@@ -55,8 +55,6 @@ class CurrentAgeActivity : AppCompatActivity() {
                     startActivity(intentToNextPage)
                 }
             }
-
         }
-
     }
 }

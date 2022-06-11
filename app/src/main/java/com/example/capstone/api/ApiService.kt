@@ -16,7 +16,7 @@ interface ApiService {
         @Field("height") height: Int,
         @Field("gender") gender: String,
         @Field("age") age: Int,
-        @Field("goals") goals: String,
+        @Field("goals") goals: String
     ): Call<SignUpResponse>
 
     @FormUrlEncoded
@@ -36,13 +36,13 @@ interface ApiService {
     fun getListActivities(
     ): Call<ListActivitiesResponse>
 
-    @Multipart
+    @FormUrlEncoded
     @POST("home/activities/{id}")
     fun addingActivities(
         @Header("Authorization") token: String,
         @Path("id") id: String,
-        @Part("activityName") activityName: String,
-        @Part("duration") duration: Int,
+        @Field("activityName") activityName: String,
+        @Field("duration") duration: Int,
     ):Call<AddingActivitiesResponse>
 
     @GET("foods/{id}")
@@ -50,5 +50,4 @@ interface ApiService {
         @Header("Authorization") token: String,
         @Path("id") id: String
     ): Call<FoodListResponse>
-
 }

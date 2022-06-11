@@ -30,8 +30,8 @@ class GoalsActivity : AppCompatActivity() {
             blueRectangle.setOnClickListener {
                 val intentToNextPage = Intent(this@GoalsActivity, CurrentWeightActivity::class.java)
                 intentToNextPage.putExtra(CurrentWeightActivity.NAME, name)
-                intentToNextPage.putExtra(CurrentWeightActivity.EMAIL, password)
-                intentToNextPage.putExtra(CurrentWeightActivity.PASSWORD, email)
+                intentToNextPage.putExtra(CurrentWeightActivity.EMAIL, email)
+                intentToNextPage.putExtra(CurrentWeightActivity.PASSWORD, password)
                 intentToNextPage.putExtra(CurrentWeightActivity.GOALS, "Gain Weight")
                 startActivity(intentToNextPage)
             }

@@ -79,5 +79,4 @@ class SignInActivity : AppCompatActivity() {
                 finish()
         }
     }
-
 }

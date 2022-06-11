@@ -45,8 +45,8 @@ class CurrentHeightActivity : AppCompatActivity() {
                 } else {
                     val intentToNextPage = Intent(this@CurrentHeightActivity, CurrentAgeActivity::class.java)
                     intentToNextPage.putExtra(CurrentAgeActivity.NAME, name)
-                    intentToNextPage.putExtra(CurrentAgeActivity.EMAIL, password)
-                    intentToNextPage.putExtra(CurrentAgeActivity.PASSWORD, email)
+                    intentToNextPage.putExtra(CurrentAgeActivity.EMAIL, email)
+                    intentToNextPage.putExtra(CurrentAgeActivity.PASSWORD, password)
                     intentToNextPage.putExtra(CurrentAgeActivity.GOALS, goals)
                     intentToNextPage.putExtra(CurrentAgeActivity.WEIGHT, weight)
                     intentToNextPage.putExtra(CurrentAgeActivity.HEIGHT, newValue)

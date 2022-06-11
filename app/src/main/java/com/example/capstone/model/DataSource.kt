@@ -71,7 +71,6 @@ class DataSource private constructor(
                     _signUp.value = response.body()
                 } else {
                     Log.e("signUp", "onResponse: ${response.message()}")
-
                 }
             }
             override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {

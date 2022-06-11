@@ -65,15 +65,15 @@ class GenderActivity : AppCompatActivity() {
 
             binding.buttonNext.setOnClickListener {
                 if (name?.isNotEmpty()!! && email?.isNotEmpty()!! && password?.isNotEmpty()!! &&
-                    goals?.isNotEmpty()!! && weight?.toString().isNotEmpty() &&
-                    height?.toString().isNotEmpty() && age?.toString().isNotEmpty() && gender.isNotEmpty()
+                    goals?.isNotEmpty()!! && weight.toString().isNotEmpty() &&
+                    height.toString().isNotEmpty() && age.toString().isNotEmpty() && gender.isNotEmpty()
                 ) {
                     model.postDataSignUp(
                         email.toString(),
                         password.toString(),
                         name.toString(),
-                        height,
                         weight,
+                        height,
                         gender,
                         age,
                         goals.toString()
@@ -92,7 +92,7 @@ class GenderActivity : AppCompatActivity() {
                 val intent = Intent(this@GenderActivity, SignInActivity::class.java)
                 startActivity(intent)
             } else {
-                Toast.makeText(applicationContext,"Sign Up Invalid", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@GenderActivity,"Sign Up Invalid", Toast.LENGTH_SHORT).show()
             }
         }
     }
