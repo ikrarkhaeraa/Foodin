@@ -3,7 +3,9 @@ package com.example.capstone.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import com.example.capstone.databinding.ActivitySignUpBinding
 
 class SignUpActivity : AppCompatActivity() {
@@ -25,11 +27,11 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun clickButton() {
         binding.apply {
-            val name = binding.edtName.text.toString().trim()
-            val email = binding.edtEmail.text.toString().trim()
-            val password = binding.edtPassword.text.toString().trim()
+            val name = edtName.text.toString().trim()
+            val email = edtEmail.text.toString().trim()
+            val password = edtPassword.text.toString().trim()
             signUp.setOnClickListener {
-                if (name.isEmpty() && email.isEmpty() && password.isEmpty() && isValidEmail(email)) {
+                if (edtName.text!!.isEmpty() || edtEmail.text!!.isEmpty() || edtPassword.text!!.isEmpty() || !isValidEmail(edtEmail.text!!)) {
                     edtName.error = FIELD_REQUIRED
                     edtEmail.error = FIELD_IS_NOT_VALID
                     edtPassword.error = FIELD_REQUIRED

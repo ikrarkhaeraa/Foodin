@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.capstone.data.entity.ActivityEntity
 import com.example.capstone.response.AddingActivitiesResponse
 import kotlinx.coroutines.launch
+import okhttp3.RequestBody
 
 class AddingActivitiesModel(private val data: DataSource) : ViewModel() {
     val addingActivitiesModel: LiveData<AddingActivitiesResponse> = data.add

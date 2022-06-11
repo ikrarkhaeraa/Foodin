@@ -12,6 +12,7 @@ import com.example.capstone.data.entity.ActivityEntity
 import com.example.capstone.data.room.Dao
 import com.example.capstone.response.SignInResponse
 import com.example.capstone.response.*
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -66,19 +66,18 @@ class ActivityAddedAdapter (private val data: DataSource) : RecyclerView.Adapter
             }
         }
 
-        Log.d("cekDuration", "$intHours")
-        Log.d("cekDuration", "$intMinutes")
-        Log.d("cekDuration", "${duration[position]}")
-
         val buttonBookmark = holder.binding.minButton
         buttonBookmark.setOnClickListener {
             buttonBookmark.visibility = View.INVISIBLE
             data.deleteActivity(activityList!!.get(position).id)
-            Log.d("cekMinButton", "${activityList!!.get(position).id}")
         }
 
     }
 
     override fun getItemCount(): Int = activityList?.size?: 0
+
+    fun getDuration() : List<Int> {
+        return duration.toList()
+    }
 
 }

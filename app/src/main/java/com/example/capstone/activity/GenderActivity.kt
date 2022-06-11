@@ -87,9 +87,13 @@ class GenderActivity : AppCompatActivity() {
     }
 
     private fun moveToLogin () {
-        model.signUp.observe(this@GenderActivity) { response ->
+        model.signUp.observe(this) {
+            if (it.status == "success") {
                 val intent = Intent(this@GenderActivity, SignInActivity::class.java)
                 startActivity(intent)
+            } else {
+                Toast.makeText(applicationContext,"Sign Up Invalid", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

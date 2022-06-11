@@ -1,6 +1,7 @@
 package com.example.capstone.api
 
 import com.example.capstone.response.*
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -41,7 +42,7 @@ interface ApiService {
         @Header("Authorization") token: String,
         @Path("id") id: String,
         @Part("activityName") activityName: String,
-        @Field("duration") duration: Int,
+        @Part("duration") duration: Int,
     ):Call<AddingActivitiesResponse>
 
     @GET("foods/{id}")
