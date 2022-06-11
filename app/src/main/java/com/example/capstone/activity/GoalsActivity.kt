@@ -32,7 +32,7 @@ class GoalsActivity : AppCompatActivity() {
                 intentToNextPage.putExtra(CurrentWeightActivity.NAME, name)
                 intentToNextPage.putExtra(CurrentWeightActivity.EMAIL, email)
                 intentToNextPage.putExtra(CurrentWeightActivity.PASSWORD, password)
-                intentToNextPage.putExtra(CurrentWeightActivity.GOALS, "Gain Weight")
+                intentToNextPage.putExtra(CurrentWeightActivity.GOALS, "gain")
                 startActivity(intentToNextPage)
             }
             blueRectangle2.setOnClickListener {
@@ -40,7 +40,7 @@ class GoalsActivity : AppCompatActivity() {
                 intentToNextPage.putExtra(CurrentWeightActivity.NAME, name)
                 intentToNextPage.putExtra(CurrentWeightActivity.EMAIL, email)
                 intentToNextPage.putExtra(CurrentWeightActivity.PASSWORD, password)
-                intentToNextPage.putExtra(CurrentWeightActivity.GOALS, "Maintain Weight")
+                intentToNextPage.putExtra(CurrentWeightActivity.GOALS, "maintain")
                 startActivity(intentToNextPage)
             }
             blueRectangle3.setOnClickListener {
@@ -48,7 +48,7 @@ class GoalsActivity : AppCompatActivity() {
                 intentToNextPage.putExtra(CurrentWeightActivity.NAME, name)
                 intentToNextPage.putExtra(CurrentWeightActivity.EMAIL, email)
                 intentToNextPage.putExtra(CurrentWeightActivity.PASSWORD, password)
-                intentToNextPage.putExtra(CurrentWeightActivity.GOALS, "Loss Weight")
+                intentToNextPage.putExtra(CurrentWeightActivity.GOALS, "loss")
                 startActivity(intentToNextPage)
             }
         }

@@ -10,6 +10,7 @@ import com.example.capstone.UserPreferences
 import com.example.capstone.api.ApiConfig
 import com.example.capstone.data.entity.ActivityEntity
 import com.example.capstone.data.room.Dao
+import com.example.capstone.dataClass.ActivityNameAdded
 import com.example.capstone.dataClass.ActivityNameAddedItem
 import com.example.capstone.response.SignInResponse
 import com.example.capstone.response.*
@@ -17,6 +18,7 @@ import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.time.Duration
 
 class DataSource private constructor(
     private val pref: UserPreferences,
@@ -140,8 +142,8 @@ class DataSource private constructor(
         })
     }
 
-    fun addingActivities (token: String, id: String, activities: Map<String, String>) {
-        val client = ApiConfig.getApiService().addingActivities(token, id, activities)
+    fun addingActivities (token: String, id: String, activityName: String, duration: Int) {
+        val client = ApiConfig.getApiService().addingActivities(token, id, activityName, duration)
         client.enqueue(object : Callback<AddingActivitiesResponse> {
             override fun onResponse(
                 call: Call<AddingActivitiesResponse>,

@@ -5,11 +5,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.capstone.data.entity.ActivityEntity
+import com.example.capstone.dataClass.ActivityNameAdded
 import com.example.capstone.dataClass.ActivityNameAddedItem
 import com.example.capstone.response.AddingActivitiesItem
 import com.example.capstone.response.AddingActivitiesResponse
 import kotlinx.coroutines.launch
 import okhttp3.RequestBody
+import java.time.Duration
 
 class AddingActivitiesModel(private val data: DataSource) : ViewModel() {
     val addingActivitiesModel: LiveData<AddingActivitiesResponse> = data.add
@@ -28,9 +30,9 @@ class AddingActivitiesModel(private val data: DataSource) : ViewModel() {
         return activityName
     }
 
-    fun postDataAdding(token:String, id:String, activities: Map<String, String>) {
+    fun postDataAdding(token:String, id:String, activityName: String, duration: Int) {
         viewModelScope.launch {
-            data.addingActivities(token, id, activities)
+            data.addingActivities(token, id, activityName, duration)
         }
     }
 }

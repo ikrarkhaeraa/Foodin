@@ -1,5 +1,6 @@
 package com.example.capstone.api
 
+import com.example.capstone.dataClass.ActivityNameAdded
 import com.example.capstone.dataClass.ActivityNameAddedItem
 import com.example.capstone.response.*
 import okhttp3.RequestBody
@@ -42,7 +43,9 @@ interface ApiService {
     fun addingActivities(
         @Header("Authorization") token: String,
         @Path("id") id: String,
-        @FieldMap activities: Map<String, @JvmSuppressWildcards String>
+        //@Field("activities") activities: ArrayList<ActivityNameAddedItem>
+        @Field("activityName") activityName: String,
+        @Field("duration") duration: Int,
 
     ):Call<AddingActivitiesResponse>
 

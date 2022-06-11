@@ -1,6 +1,7 @@
 package com.example.capstone.fragment
 
 import android.content.Intent
+import android.graphics.Insets.add
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,16 +14,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.capstone.ModelFactory
 import com.example.capstone.activity.ResultActivity
 import com.example.capstone.adapter.ActivityAddedAdapter
+import com.example.capstone.data.entity.ActivityEntity
 import com.example.capstone.dataClass.ActivityNameAdded
 import com.example.capstone.dataClass.ActivityNameAddedItem
 import com.example.capstone.databinding.FragmentAddedActivityBinding
 import com.example.capstone.model.AddingActivitiesModel
 import com.example.capstone.model.CalorieModel
 import com.example.capstone.model.DataSource
-import okhttp3.RequestBody
-import okhttp3.RequestBody.Companion.toRequestBody
-import kotlin.collections.set
-
 
 class AddedActivityFragment (private val data: DataSource) : Fragment() {
     private lateinit var binding: FragmentAddedActivityBinding
@@ -81,22 +79,19 @@ class AddedActivityFragment (private val data: DataSource) : Fragment() {
             val data = model.getActivity()
             val duration = addedAdapter.getDuration()
             val item: ArrayList<ActivityNameAddedItem> = ArrayList(duration.size)
-            for (i in duration.indices) {
-                item.apply {
-                    add(ActivityNameAddedItem(data?.get(i)!!.activityName, duration[i]))
-                }
-            }
-            val dataItem = ActivityNameAdded(item).activities[0]
-            Log.d("cekDataItem", "$dataItem")
-            Log.d("cekLoop", "$item")
             modelCalorie.getUserSession().observe(this.requireActivity()) {
                 token = it.token
                 idUser = it.id
-                val map: HashMap<String, String> = HashMap()
-                map["activityName"] = dataItem.activityName
-                map["duration"] = dataItem.duration.toString()
-                model.postDataAdding(token, idUser, map.toSortedMap())
-                Log.d("cekMap", "${map.toSortedMap()}")
+                for (i in duration.indices) {
+                    item.apply {
+                        add(ActivityNameAddedItem(data?.get(i)!!.activityName, duration[i]))
+                        val activityName = data?.get(i)!!.activityName
+                        val activityDuration = duration[i]
+                        Log.d("cekAdding", activityName)
+                        Log.d("cekAdding", "$duration")
+                        model.postDataAdding(token, idUser, activityName, activityDuration)
+                    }
+                }
             }
         }
     }
