@@ -53,7 +53,7 @@ class DataSource private constructor(
     val getCalorie: LiveData<CalorieResponse> = _getCalorie
 
     private val _getFood = MutableLiveData<FoodListResponse>()
-    val getFood: LiveData<FoodListResponse> = _getFood
+    val getFood: LiveData<FoodListResponse>? = _getFood
 
     fun uploadSignUpData(email:String, password:String, name: String, weightCurrent: Int, height:Int, gender:String,
                          age:Int, goals:String) {
@@ -168,7 +168,7 @@ class DataSource private constructor(
             ) {
                 if (response.isSuccessful) {
                     Log.e("cekFood", "onResponse: ${response.message()}")
-                    _getFood.value = response.body()
+                    _getFood?.value = response.body()
                 } else {
                     Log.e("cekFood", "onFailure: ${response.message()}")
                 }

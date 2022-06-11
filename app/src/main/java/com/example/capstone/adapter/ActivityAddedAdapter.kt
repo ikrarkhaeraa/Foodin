@@ -36,6 +36,8 @@ class ActivityAddedAdapter (private val data: DataSource) : RecyclerView.Adapter
 
         var intHours = 0
         var intMinutes = 0
+        duration[position] = (intHours*60) + intMinutes
+
         if (holder.binding.tbHours.text.toString() == "") {
         } else {
             intHours = holder.binding.tbHours.text.toString().toInt()
@@ -64,23 +66,19 @@ class ActivityAddedAdapter (private val data: DataSource) : RecyclerView.Adapter
             }
         }
 
-        duration[position] = (intHours*60) + intMinutes
+        Log.d("cekDuration", "$intHours")
+        Log.d("cekDuration", "$intMinutes")
+        Log.d("cekDuration", "${duration[position]}")
 
         val buttonBookmark = holder.binding.minButton
         buttonBookmark.setOnClickListener {
-//            buttonBookmark.visibility = View.INVISIBLE
-//            data.deleteActivity(activityList!!.get(position).id)
-//            Log.d("cekMinButton", "${activityList!!.get(position).id}")
-            Log.d("cekDuration", "$intHours")
-            Log.d("cekDuration", "$intMinutes")
-            Log.d("cekDuration", "${duration[position]}")
+            buttonBookmark.visibility = View.INVISIBLE
+            data.deleteActivity(activityList!!.get(position).id)
+            Log.d("cekMinButton", "${activityList!!.get(position).id}")
         }
 
     }
 
     override fun getItemCount(): Int = activityList?.size?: 0
 
-//    fun getDuration() {
-//        Log.d("cekDuration", "$duration")
-//    }
 }

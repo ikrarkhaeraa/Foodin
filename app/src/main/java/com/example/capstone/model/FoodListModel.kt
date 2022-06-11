@@ -9,7 +9,7 @@ import com.example.capstone.response.ListActivitiesResponse
 import kotlinx.coroutines.launch
 
 class FoodListModel(private val data: DataSource) : ViewModel() {
-    val foodList: LiveData<FoodListResponse> = data.getFood
+    val foodList: LiveData<FoodListResponse>? = data.getFood
 
     fun getFoodList(token: String, id: String) {
         viewModelScope.launch {

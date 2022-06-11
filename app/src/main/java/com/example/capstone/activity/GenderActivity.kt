@@ -64,8 +64,8 @@ class GenderActivity : AppCompatActivity() {
             Log.d("cekData", gender)
 
             binding.buttonNext.setOnClickListener {
-                if (name?.isNotEmpty() == true && email?.isNotEmpty() == true && password?.isNotEmpty() == true &&
-                    goals?.isNotEmpty() == true && weight?.toString().isNotEmpty() &&
+                if (name?.isNotEmpty()!! && email?.isNotEmpty()!! && password?.isNotEmpty()!! &&
+                    goals?.isNotEmpty()!! && weight?.toString().isNotEmpty() &&
                     height?.toString().isNotEmpty() && age?.toString().isNotEmpty() && gender.isNotEmpty()
                 ) {
                     model.postDataSignUp(

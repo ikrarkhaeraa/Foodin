@@ -46,7 +46,6 @@ class AddedActivityFragment (private val data: DataSource) : Fragment() {
         adapter = binding.rvActivityAdded
         adapter.setHasFixedSize(true)
         showRecyclerList()
-        convertDuration()
         postAdding()
         toResult()
     }
@@ -56,9 +55,6 @@ class AddedActivityFragment (private val data: DataSource) : Fragment() {
         val addedActivityAdapter = ActivityAddedAdapter(data)
         adapter.adapter = addedActivityAdapter
         data.getActivity()
-//        binding.buttonAdded.setOnClickListener {
-//            addedActivityAdapter.getDuration()
-//        }
     }
 
     private fun toResult() {
@@ -80,9 +76,6 @@ class AddedActivityFragment (private val data: DataSource) : Fragment() {
             val data = model.getActivity()
             //model.postDataAdding()
         }
-    }
-
-    private fun convertDuration() {
     }
 
 }

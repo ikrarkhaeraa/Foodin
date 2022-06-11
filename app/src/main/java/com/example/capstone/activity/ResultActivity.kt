@@ -45,10 +45,10 @@ class ResultActivity : AppCompatActivity() {
             Log.d("cekFood", "${modelFood.getFoodList(token, idUser)}")
         }
 
-        modelFood.foodList.observe(this@ResultActivity) {
-            val listFood1 = modelFood.foodList.value?.data?.foodLists?.get(0)
-            val listFood2 = modelFood.foodList.value?.data?.foodLists?.get(1)
-            val listFood3 = modelFood.foodList.value?.data?.foodLists?.get(2)
+        modelFood.foodList?.observe(this@ResultActivity) {
+            val listFood1 = modelFood.foodList?.value?.data?.foodLists?.get(0)
+            val listFood2 = modelFood.foodList?.value?.data?.foodLists?.get(1)
+            val listFood3 = modelFood.foodList?.value?.data?.foodLists?.get(2)
             Log.d("cekListFood", "$listFood1")
             Log.d("cekListFood", "$listFood2")
             Log.d("cekListFood", "$listFood3")
