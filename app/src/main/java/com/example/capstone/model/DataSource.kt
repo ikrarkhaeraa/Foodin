@@ -10,6 +10,7 @@ import com.example.capstone.UserPreferences
 import com.example.capstone.api.ApiConfig
 import com.example.capstone.data.entity.ActivityEntity
 import com.example.capstone.data.room.Dao
+import com.example.capstone.dataClass.ActivityNameAddedItem
 import com.example.capstone.response.SignInResponse
 import com.example.capstone.response.*
 import okhttp3.RequestBody
@@ -139,8 +140,8 @@ class DataSource private constructor(
         })
     }
 
-    fun addingActivities (token: String, id: String, activityName: String, duration: Int) {
-        val client = ApiConfig.getApiService().addingActivities(token, id, activityName, duration)
+    fun addingActivities (token: String, id: String, activities: Map<String, String>) {
+        val client = ApiConfig.getApiService().addingActivities(token, id, activities)
         client.enqueue(object : Callback<AddingActivitiesResponse> {
             override fun onResponse(
                 call: Call<AddingActivitiesResponse>,

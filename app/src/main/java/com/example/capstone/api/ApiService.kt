@@ -1,5 +1,6 @@
 package com.example.capstone.api
 
+import com.example.capstone.dataClass.ActivityNameAddedItem
 import com.example.capstone.response.*
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -41,8 +42,8 @@ interface ApiService {
     fun addingActivities(
         @Header("Authorization") token: String,
         @Path("id") id: String,
-        @Field("activityName") activityName: String,
-        @Field("duration") duration: Int,
+        @FieldMap activities: Map<String, @JvmSuppressWildcards String>
+
     ):Call<AddingActivitiesResponse>
 
     @GET("foods/{id}")

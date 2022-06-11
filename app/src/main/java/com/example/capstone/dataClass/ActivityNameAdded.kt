@@ -9,7 +9,7 @@ import kotlinx.parcelize.Parcelize
 data class ActivityNameAdded(
 
     @field:SerializedName("activities")
-    val activities: List<ActivityNameAddedItem>
+    val activities: ArrayList<ActivityNameAddedItem>
 
 ) : Parcelable
 
@@ -19,7 +19,7 @@ data class ActivityNameAddedItem(
     @field:SerializedName("activityName")
     val activityName: String,
 
-    @field:SerializedName("activityName")
+    @field:SerializedName("duration")
     val duration: Int,
 
 ) : Parcelable

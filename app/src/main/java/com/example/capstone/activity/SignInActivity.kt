@@ -3,6 +3,7 @@ package com.example.capstone.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import com.example.capstone.ModelFactory
 import com.example.capstone.databinding.ActivitySignInBinding
@@ -74,9 +75,13 @@ class SignInActivity : AppCompatActivity() {
 
     private fun moveToNextPage () {
         model.signIn.observe(this@SignInActivity) {
+            if (it.status == "success") {
                 val intent = Intent(this@SignInActivity, MainActivity::class.java)
                 startActivity(intent)
                 finish()
+            } else {
+                Toast.makeText(this,"Sign In Invalid", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }
