@@ -60,6 +60,9 @@ recommendations based on their activity and calorie requirement.</string>
     <string name="current_age">YOUR CURRENT AGE IS: </string>
     <string name="gender">YOUR GENDER IS: </string>
     <string name="name">Name </string>
+    <string name="food_caption"> Food</string>
+    <string name="vegetable_caption"> Vegetable</string>
+    <string name="fruit_caption"> Fruit</string>
 
     <string-array name="activity_name_list">
         <item>SCHOOL</item>

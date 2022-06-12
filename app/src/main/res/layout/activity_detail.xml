@@ -51,7 +51,199 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/photo_detail"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_bias="1.0"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/food_caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rambla"
+            android:text="@string/food_caption"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.038"
+            app:layout_constraintStart_toStartOf="@+id/bg_blue_detail"
+            app:layout_constraintTop_toBottomOf="@+id/line_breakfast"
+            app:layout_constraintVertical_bias="0.013"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/vegetable_caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rambla"
+            android:text="@string/vegetable_caption"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.049"
+            app:layout_constraintStart_toStartOf="@+id/bg_blue_detail"
+            app:layout_constraintTop_toBottomOf="@+id/food_caption"
+            app:layout_constraintVertical_bias="0.02"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/fruit_caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rambla"
+            android:text="@string/fruit_caption"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
+            app:layout_constraintEnd_toEndOf="@+id/bg_blue_detail"
+            app:layout_constraintHorizontal_bias="0.043"
+            app:layout_constraintStart_toStartOf="@+id/bg_blue_detail"
+            app:layout_constraintTop_toBottomOf="@+id/vegetable_caption"
+            app:layout_constraintVertical_bias="0.017"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/food1_caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rambla"
+            android:text="@string/food_caption"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.029"
+            app:layout_constraintStart_toStartOf="@+id/bg_blue_detail"
+            app:layout_constraintTop_toTopOf="@+id/bg_blue_detail"
+            app:layout_constraintVertical_bias="0.367"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/vegetable1_caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rambla"
+            android:text="@string/vegetable_caption"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
+            app:layout_constraintEnd_toEndOf="@+id/bg_blue_detail"
+            app:layout_constraintHorizontal_bias="0.033"
+            app:layout_constraintStart_toStartOf="@+id/bg_blue_detail"
+            app:layout_constraintTop_toBottomOf="@+id/food1_caption"
+            app:layout_constraintVertical_bias="0.016"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/fruit1_caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rambla"
+            android:text="@string/fruit_caption"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
+            app:layout_constraintEnd_toEndOf="@+id/bg_blue_detail"
+            app:layout_constraintHorizontal_bias="0.029"
+            app:layout_constraintStart_toStartOf="@+id/bg_blue_detail"
+            app:layout_constraintTop_toBottomOf="@+id/vegetable1_caption"
+            app:layout_constraintVertical_bias="0.019"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/food2_caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rambla"
+            android:text="@string/food_caption"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
+            app:layout_constraintEnd_toEndOf="@+id/bg_blue_detail"
+            app:layout_constraintHorizontal_bias="0.037"
+            app:layout_constraintStart_toStartOf="@+id/bg_blue_detail"
+            app:layout_constraintTop_toBottomOf="@+id/line_lunch"
+            app:layout_constraintVertical_bias="0.029"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/vegetable2_caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rambla"
+            android:text="@string/vegetable_caption"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
+            app:layout_constraintEnd_toEndOf="@+id/bg_blue_detail"
+            app:layout_constraintHorizontal_bias="0.033"
+            app:layout_constraintStart_toStartOf="@+id/bg_blue_detail"
+            app:layout_constraintTop_toTopOf="@+id/food2_caption"
+            app:layout_constraintVertical_bias="0.116"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/fruit2_caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rambla"
+            android:text="@string/fruit_caption"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
+            app:layout_constraintEnd_toEndOf="@+id/bg_blue_detail"
+            app:layout_constraintHorizontal_bias="0.037"
+            app:layout_constraintStart_toStartOf="@+id/bg_blue_detail"
+            app:layout_constraintTop_toBottomOf="@+id/vegetable2_caption"
+            app:layout_constraintVertical_bias="0.047"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/food3_caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rambla"
+            android:text="@string/food_caption"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
+            app:layout_constraintEnd_toEndOf="@+id/bg_blue_detail"
+            app:layout_constraintHorizontal_bias="0.037"
+            app:layout_constraintStart_toStartOf="@+id/bg_blue_detail"
+            app:layout_constraintTop_toTopOf="@+id/line_dinner"
+            app:layout_constraintVertical_bias="0.162"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/vegetable3_caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:fontFamily="@font/rambla"
+            android:text="@string/vegetable_caption"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
+            app:layout_constraintEnd_toEndOf="@+id/bg_blue_detail"
+            app:layout_constraintHorizontal_bias="0.042"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/food3_caption"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/fruit3_caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rambla"
+            android:text="@string/fruit_caption"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.037"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vegetable3_caption"
+            app:layout_constraintVertical_bias="0.229"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -86,16 +278,17 @@
             android:id="@+id/food_breakfast"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
             android:fontFamily="@font/rambla"
             android:text="@string/food_breakfast"
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.049"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.016"
+            app:layout_constraintStart_toEndOf="@+id/food_caption"
             app:layout_constraintTop_toBottomOf="@+id/line_breakfast"
-            app:layout_constraintVertical_bias="0.021"
+            app:layout_constraintVertical_bias="0.013"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -106,12 +299,12 @@
             android:text="@string/drink_breakfast"
             android:textColor="@color/white"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.036"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/food_breakfast"
-            app:layout_constraintVertical_bias="0.017"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
+            app:layout_constraintEnd_toEndOf="@+id/bg_blue_detail"
+            app:layout_constraintHorizontal_bias="0.049"
+            app:layout_constraintStart_toEndOf="@+id/vegetable_caption"
+            app:layout_constraintTop_toBottomOf="@+id/line_breakfast"
+            app:layout_constraintVertical_bias="0.07"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -122,12 +315,12 @@
             android:text="@string/fruit_breakfast"
             android:textColor="@color/white"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.038"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/vegetable_breakfast"
-            app:layout_constraintVertical_bias="0.018"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
+            app:layout_constraintEnd_toEndOf="@+id/bg_blue_detail"
+            app:layout_constraintHorizontal_bias="0.028"
+            app:layout_constraintStart_toEndOf="@+id/fruit_caption"
+            app:layout_constraintTop_toBottomOf="@+id/line_breakfast"
+            app:layout_constraintVertical_bias="0.121"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -167,12 +360,12 @@
             android:text="@string/food_brunch"
             android:textColor="@color/white"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
             app:layout_constraintEnd_toEndOf="@+id/bg_blue_detail"
-            app:layout_constraintHorizontal_bias="0.037"
-            app:layout_constraintStart_toStartOf="@+id/bg_blue_detail"
+            app:layout_constraintHorizontal_bias="0.034"
+            app:layout_constraintStart_toEndOf="@+id/food1_caption"
             app:layout_constraintTop_toBottomOf="@+id/line_brunch"
-            app:layout_constraintVertical_bias="0.025"
+            app:layout_constraintVertical_bias="0.027"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -185,10 +378,10 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
             app:layout_constraintEnd_toEndOf="@+id/bg_blue_detail"
-            app:layout_constraintHorizontal_bias="0.042"
-            app:layout_constraintStart_toStartOf="@+id/bg_blue_detail"
-            app:layout_constraintTop_toBottomOf="@+id/food_brunch"
-            app:layout_constraintVertical_bias="0.02"
+            app:layout_constraintHorizontal_bias="0.048"
+            app:layout_constraintStart_toEndOf="@+id/vegetable1_caption"
+            app:layout_constraintTop_toBottomOf="@+id/line_brunch"
+            app:layout_constraintVertical_bias="0.095"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -200,11 +393,11 @@
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
-            app:layout_constraintEnd_toEndOf="@+id/bg_blue_detail"
-            app:layout_constraintHorizontal_bias="0.045"
-            app:layout_constraintStart_toStartOf="@+id/bg_blue_detail"
-            app:layout_constraintTop_toBottomOf="@+id/vegetable_brunch"
-            app:layout_constraintVertical_bias="0.022"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.04"
+            app:layout_constraintStart_toEndOf="@+id/fruit1_caption"
+            app:layout_constraintTop_toBottomOf="@+id/line_brunch"
+            app:layout_constraintVertical_bias="0.162"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -243,12 +436,12 @@
             android:text="@string/food_lunch"
             android:textColor="@color/white"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.043"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
+            app:layout_constraintEnd_toEndOf="@+id/bg_blue_detail"
+            app:layout_constraintHorizontal_bias="0.031"
+            app:layout_constraintStart_toEndOf="@+id/food2_caption"
             app:layout_constraintTop_toBottomOf="@+id/line_lunch"
-            app:layout_constraintVertical_bias="0.035"
+            app:layout_constraintVertical_bias="0.029"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -259,12 +452,12 @@
             android:text="@string/drink_lunch"
             android:textColor="@color/white"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.047"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/food_lunch"
-            app:layout_constraintVertical_bias="0.051"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
+            app:layout_constraintEnd_toEndOf="@+id/bg_blue_detail"
+            app:layout_constraintHorizontal_bias="0.056"
+            app:layout_constraintStart_toEndOf="@+id/vegetable2_caption"
+            app:layout_constraintTop_toBottomOf="@+id/line_lunch"
+            app:layout_constraintVertical_bias="0.142"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -276,11 +469,11 @@
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.041"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/vegetable_lunch"
-            app:layout_constraintVertical_bias="0.05"
+            app:layout_constraintEnd_toEndOf="@+id/bg_blue_detail"
+            app:layout_constraintHorizontal_bias="0.042"
+            app:layout_constraintStart_toEndOf="@+id/fruit2_caption"
+            app:layout_constraintTop_toTopOf="@+id/line_lunch"
+            app:layout_constraintVertical_bias="0.278"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -293,10 +486,10 @@
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.037"
+            app:layout_constraintHorizontal_bias="0.035"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/bg_blue_detail"
-            app:layout_constraintVertical_bias="0.786" />
+            app:layout_constraintVertical_bias="0.77" />
 
         <TextView
             android:id="@+id/line_dinner"
@@ -321,11 +514,11 @@
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.038"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/bg_blue_detail"
+            app:layout_constraintHorizontal_bias="0.027"
+            app:layout_constraintStart_toEndOf="@+id/food3_caption"
             app:layout_constraintTop_toBottomOf="@+id/line_dinner"
-            app:layout_constraintVertical_bias="0.113"
+            app:layout_constraintVertical_bias="0.115"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -338,10 +531,10 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.05"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/food_dinner"
-            app:layout_constraintVertical_bias="0.181"
+            app:layout_constraintHorizontal_bias="0.042"
+            app:layout_constraintStart_toEndOf="@+id/vegetable3_caption"
+            app:layout_constraintTop_toBottomOf="@+id/line_dinner"
+            app:layout_constraintVertical_bias="0.396"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -352,12 +545,12 @@
             android:text="@string/fruit_dinner"
             android:textColor="@color/white"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_blue_detail"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.04"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/vegetable_dinner"
-            app:layout_constraintVertical_bias="0.264"
+            app:layout_constraintHorizontal_bias="0.036"
+            app:layout_constraintStart_toEndOf="@+id/fruit3_caption"
+            app:layout_constraintTop_toBottomOf="@+id/line_dinner"
+            app:layout_constraintVertical_bias="0.694"
             tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

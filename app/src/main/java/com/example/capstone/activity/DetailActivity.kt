@@ -17,54 +17,53 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private lateinit var binding: ActivityDetailBinding
-    val setName = intent.getStringExtra(SETNAME)
-    val setFood = intent.getParcelableExtra<FoodListsItem>(SETFOOD)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
-        setName()
-        breakfast()
-        brunch()
-        lunch()
-        dinner()
-        Log.d("cekSetFood", "$setFood")
-        setContentView(binding.root)
-    }
+        val setName = intent.getStringExtra(SETNAME).toString()
+        val setFood = intent.getParcelableExtra<FoodListsItem>(SETFOOD)
+        binding.apply {
+            binding.setDetail.text = setName
 
-    private fun setName() {
-        binding.setDetail.text = setName
+            foodBreakfast.text = setFood?.breakfast?.food
+            vegetableBreakfast.text = setFood?.breakfast?.vegetable
+            fruitBreakfast.text = setFood?.breakfast?.fruit
+
+            foodBrunch.text = setFood?.brunch?.food
+            vegetableBrunch.text = setFood?.brunch?.vegetable
+            fruitBrunch.text = setFood?.brunch?.fruit
+
+            foodLunch.text = setFood?.lunch?.food
+            vegetableLunch.text = setFood?.lunch?.vegetable
+            fruitLunch.text = setFood?.lunch?.fruit
+
+            foodDinner.text = setFood?.dinner?.food
+            vegetableDinner.text = setFood?.dinner?.vegetable
+            fruitDinner.text = setFood?.dinner?.fruit
+        }
+        setContentView(binding.root)
     }
 
     private fun breakfast() {
         binding.apply {
-            foodBreakfast.text = setFood?.breakfast?.food
-            vegetableBreakfast.text = setFood?.breakfast?.vegetable
-            fruitBreakfast.text = setFood?.breakfast?.fruit
+
         }
     }
 
     private fun brunch() {
         binding.apply {
-            foodBreakfast.text = setFood?.brunch?.food
-            vegetableBreakfast.text = setFood?.brunch?.vegetable
-            fruitBreakfast.text = setFood?.brunch?.fruit
+
         }
     }
 
     private fun lunch() {
         binding.apply {
-            foodBreakfast.text = setFood?.lunch?.food
-            vegetableBreakfast.text = setFood?.lunch?.vegetable
-            fruitBreakfast.text = setFood?.lunch?.fruit
         }
     }
 
     private fun dinner() {
         binding.apply {
-            foodBreakfast.text = setFood?.dinner?.food
-            vegetableBreakfast.text = setFood?.dinner?.vegetable
-            fruitBreakfast.text = setFood?.dinner?.fruit
         }
     }
 }

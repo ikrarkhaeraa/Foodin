@@ -57,7 +57,7 @@ data class Brunch(
 	val fruit: String,
 
 	@field:SerializedName("vegetable")
-	val vegetable: String?,
+	val vegetable: String,
 
 	@field:SerializedName("food")
 	val food: String

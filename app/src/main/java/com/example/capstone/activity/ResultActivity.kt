@@ -52,11 +52,15 @@ class ResultActivity : AppCompatActivity() {
             Log.d("cekListFood", "$listFood1")
             Log.d("cekListFood", "$listFood2")
             Log.d("cekListFood", "$listFood3")
+            Log.d("cekVegetable", "${listFood1?.brunch?.food}")
 
             binding.apply {
-                val setName1 = binding.result1Number.text
-                val setName2 = binding.result2Number.text
-                val setName3 = binding.result3Number.text
+                val setName1 = binding.result1Number.text.toString()
+                val setName2 = binding.result2Number.text.toString()
+                val setName3 = binding.result3Number.text.toString()
+                Log.d("cekSetName", "$setName1")
+                Log.d("cekSetName", "$setName2")
+                Log.d("cekSetName", "$setName3")
                 set1Button.setOnClickListener {
                     val intentToNextPage = Intent(this@ResultActivity, DetailActivity::class.java)
                     intentToNextPage.putExtra(DetailActivity.SETNAME, setName1)
