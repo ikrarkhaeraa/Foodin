@@ -4,10 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.capstone.data.entity.ActivityEntity
-import com.example.capstone.dataClass.ActivityNameAddedItem
 import com.example.capstone.response.AddingActivitiesResponse
 import kotlinx.coroutines.launch
-import kotlin.time.Duration
 
 class AddingActivitiesModel(private val data: DataSource) : ViewModel() {
     val addingActivitiesModel: LiveData<AddingActivitiesResponse> = data.add

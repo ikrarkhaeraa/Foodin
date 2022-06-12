@@ -92,11 +92,11 @@ class AddedActivityFragment (private val data: DataSource) : Fragment() {
             }
 //            toResult()
             model.addingActivitiesModel.observe(this.requireActivity()) {
-                if (it.activityName.isNotEmpty() || it.duration.isNotEmpty()) {
-                    Toast.makeText(this.context,"Upload Activity Invalid", Toast.LENGTH_SHORT).show()
-                } else {
-                    val intent = Intent(this.context, SignInActivity::class.java)
+                if (it.status == "success") {
+                    val intent = Intent(this.context, ResultActivity::class.java)
                     startActivity(intent)
+                } else {
+                    Toast.makeText(this.context,"Upload Activity Invalid", Toast.LENGTH_SHORT).show()
                 }
             }
         }
