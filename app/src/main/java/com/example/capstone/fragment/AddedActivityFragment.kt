@@ -1,26 +1,26 @@
 package com.example.capstone.fragment
 
 import android.content.Intent
-import android.graphics.Insets.add
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.capstone.ModelFactory
 import com.example.capstone.activity.ResultActivity
+import com.example.capstone.activity.SignInActivity
 import com.example.capstone.adapter.ActivityAddedAdapter
-import com.example.capstone.data.entity.ActivityEntity
-import com.example.capstone.dataClass.ActivityNameAdded
 import com.example.capstone.dataClass.ActivityNameAddedItem
 import com.example.capstone.databinding.FragmentAddedActivityBinding
 import com.example.capstone.model.AddingActivitiesModel
 import com.example.capstone.model.CalorieModel
 import com.example.capstone.model.DataSource
+
 
 class AddedActivityFragment (private val data: DataSource) : Fragment() {
     private lateinit var binding: FragmentAddedActivityBinding
@@ -62,9 +62,6 @@ class AddedActivityFragment (private val data: DataSource) : Fragment() {
     }
 
     private fun toResult() {
-            val intentToResult = Intent(this.context, ResultActivity::class.java)
-            startActivity(intentToResult)
-
     }
 
     override fun onResume() {
@@ -85,12 +82,21 @@ class AddedActivityFragment (private val data: DataSource) : Fragment() {
                 for (i in duration.indices) {
                     item.apply {
                         add(ActivityNameAddedItem(data?.get(i)!!.activityName, duration[i]))
-                        val activityName = data?.get(i)!!.activityName
+                        val activityName = data[i].activityName
                         val activityDuration = duration[i]
-                        Log.d("cekAdding", activityName)
-                        Log.d("cekAdding", "$duration")
                         model.postDataAdding(token, idUser, activityName, activityDuration)
+                        Log.d("cekMap", "$activityName")
+                        Log.d("cekMap", "$activityDuration")
                     }
+                }
+            }
+//            toResult()
+            model.addingActivitiesModel.observe(this.requireActivity()) {
+                if (it.activityName.isNotEmpty() || it.duration.isNotEmpty()) {
+                    Toast.makeText(this.context,"Upload Activity Invalid", Toast.LENGTH_SHORT).show()
+                } else {
+                    val intent = Intent(this.context, SignInActivity::class.java)
+                    startActivity(intent)
                 }
             }
         }

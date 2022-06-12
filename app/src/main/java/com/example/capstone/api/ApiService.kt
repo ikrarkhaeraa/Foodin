@@ -43,8 +43,8 @@ interface ApiService {
     fun addingActivities(
         @Header("Authorization") token: String,
         @Path("id") id: String,
-        //@Field("activities") activities: ArrayList<ActivityNameAddedItem>
-        @Field("activityName") activityName: String,
+        //@FieldMap activities: HashMap<String, String>,
+        @Field ("activityName") activityName: String,
         @Field("duration") duration: Int,
 
     ):Call<AddingActivitiesResponse>

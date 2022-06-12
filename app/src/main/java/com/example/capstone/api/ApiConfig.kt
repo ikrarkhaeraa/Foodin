@@ -14,7 +14,7 @@ class ApiConfig {
                 .addInterceptor(loggingInterceptor)
                 .build()
             val retrofit = Retrofit.Builder()
-                .baseUrl("https://foodin-app-v1-e2sp7mteba-et.a.run.app/")
+                .baseUrl("https://foodin-app-3-e2sp7mteba-et.a.run.app")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()

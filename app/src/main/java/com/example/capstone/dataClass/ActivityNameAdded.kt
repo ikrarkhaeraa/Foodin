@@ -1,7 +1,6 @@
 package com.example.capstone.dataClass
 
 import android.os.Parcelable
-import com.example.capstone.response.AddingActivitiesItem
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 

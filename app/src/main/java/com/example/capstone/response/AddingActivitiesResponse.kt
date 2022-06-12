@@ -4,12 +4,6 @@ import com.google.gson.annotations.SerializedName
 
 data class AddingActivitiesResponse(
 
-	@field:SerializedName("activities")
-	val activities: List<AddingActivitiesItem>
-)
-
-data class AddingActivitiesItem(
-
 	@field:SerializedName("duration")
 	val duration: String,
 
