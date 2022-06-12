@@ -53,5 +53,5 @@ interface ApiService {
     fun getFood(
         @Header("Authorization") token: String,
         @Path("id") id: String
-    ): Call<FoodListResponse>
+    ): Call<FoodListsResponse>
 }

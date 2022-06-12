@@ -56,8 +56,8 @@ class DataSource private constructor(
     private val _getCalorie = MutableLiveData<CalorieResponse>()
     val getCalorie: LiveData<CalorieResponse> = _getCalorie
 
-    private val _getFood = MutableLiveData<FoodListResponse>()
-    val getFood: LiveData<FoodListResponse>? = _getFood
+    private val _getFood = MutableLiveData<FoodListsResponse>()
+    val getFood: LiveData<FoodListsResponse> = _getFood
 
     fun uploadSignUpData(email:String, password:String, name: String, weightCurrent: Int, height:Int, gender:String,
                          age:Int, goals:String) {
@@ -164,19 +164,19 @@ class DataSource private constructor(
 
     fun getListFood (token: String, id: String) {
         val client = ApiConfig.getApiService().getFood(token, id)
-        client.enqueue(object : Callback<FoodListResponse> {
+        client.enqueue(object : Callback<FoodListsResponse> {
             override fun onResponse(
-                call: Call<FoodListResponse>,
-                response: Response<FoodListResponse>
+                call: Call<FoodListsResponse>,
+                response: Response<FoodListsResponse>
             ) {
                 if (response.isSuccessful) {
                     Log.e("cekFood", "onResponse: ${response.message()}")
-                    _getFood?.value = response.body()
+                    _getFood.value = response.body()
                 } else {
                     Log.e("cekFood", "onFailure: ${response.message()}")
                 }
             }
-            override fun onFailure(call: Call<FoodListResponse>, t: Throwable) {
+            override fun onFailure(call: Call<FoodListsResponse>, t: Throwable) {
                 Log.e("addFailure", "onFailure: ${t.message}")
             }
         })

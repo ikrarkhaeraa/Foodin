@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class FoodListResponse(
+data class FoodListsResponse(
 
 	@field:SerializedName("data")
 	val data: Data,
@@ -19,45 +19,6 @@ data class Data(
 
 	@field:SerializedName("foodLists")
 	val foodLists: List<FoodListsItem>
-) : Parcelable
-
-@Parcelize
-data class Dinner(
-
-	@field:SerializedName("fruit")
-	val fruit: String,
-
-	@field:SerializedName("vegetable")
-	val vegetable: String,
-
-	@field:SerializedName("food")
-	val food: String
-) : Parcelable
-
-@Parcelize
-data class Lunch(
-
-	@field:SerializedName("fruit")
-	val fruit: String,
-
-	@field:SerializedName("vegetable")
-	val vegetable: String,
-
-	@field:SerializedName("food")
-	val food: String
-) : Parcelable
-
-@Parcelize
-data class Brunch(
-
-	@field:SerializedName("fruit")
-	val fruit: String,
-
-	@field:SerializedName("vegetable")
-	val vegetable: String,
-
-	@field:SerializedName("food")
-	val food: String
 ) : Parcelable
 
 @Parcelize
@@ -87,4 +48,43 @@ data class FoodListsItem(
 
 	@field:SerializedName("dinner")
 	val dinner: Dinner
+) : Parcelable
+
+@Parcelize
+data class Brunch(
+
+	@field:SerializedName("fruit")
+	val fruit: String,
+
+	@field:SerializedName("vegetable")
+	val vegetable: String?,
+
+	@field:SerializedName("food")
+	val food: String
+) : Parcelable
+
+@Parcelize
+data class Lunch(
+
+	@field:SerializedName("fruit")
+	val fruit: String,
+
+	@field:SerializedName("vegetable")
+	val vegetable: String,
+
+	@field:SerializedName("food")
+	val food: String
+) : Parcelable
+
+@Parcelize
+data class Dinner(
+
+	@field:SerializedName("fruit")
+	val fruit: String,
+
+	@field:SerializedName("vegetable")
+	val vegetable: String,
+
+	@field:SerializedName("food")
+	val food: String
 ) : Parcelable
